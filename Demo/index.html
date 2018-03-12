@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Mayweather Health Tools</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/mayweatherhealth.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #0c4404;">
+    <div class="container">
+      <a class="navbar-brand" href="#">Mayweather Health Tools</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#calculator">Calculators</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#mealRandom">Meal Randomizer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Workout Randomizer</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <header class="py-5 bg-image-full" style="background-image: url('https://images.unsplash.com/photo-1463123081488-789f998ac9c4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f5d193d06f7ebcea646619c419a05ce6&auto=format&fit=crop&w=1950&q=80');">
+    <div style="height: 100px;"></div>
+  </header>
+
+
+  <section class="py-5">
+    <div class="container">
+      <h1 class="display-4">Welcome to Mayweather Health Tools</h1>
+      <p class="lead">Providing the tools needed to maintain a healthy lifestyle.</p>
+      <p>Below yo delectus odit vel itaque amet.</p>
+
+
+    </div>
+  </section>
+
+
+  <section class="py-5 bg-image-full" style="background-image: url('https://images.unsplash.com/photo-1507598641400-ec3536ba81bc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5d1d7de142e03475cdc90421d6c2bf2a&auto=format&fit=crop&w=1950&q=80');">
+
+    <div style="height: 100px;"></div>
+  </section>
+
+
+  <section class="py-5" id="calculator">
+    <div class="container">
+      <h1>Calculators</h1>
+      <p class="lead">BMI, BMR and Water Intake</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
+
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active bg-info text-white " id="nav-home-tab" data-toggle="tab" href="#nav-bmi" role="tab" aria-controls="nav-bmi" aria-selected="true">BMI</a>
+          <a class="nav-item nav-link bg-info text-white " id="nav-profile-tab" data-toggle="tab" href="#nav-bmr" role="tab" aria-controls="nav-bmr" aria-selected="false">BMR</a>
+          <a class="nav-item nav-link bg-info text-white" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-bmi" role="tabpanel" aria-labelledby="nav-home-tab">
+          <p class="h5 text-center">Please Enter Your Information Below</p>
+<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ut ad quo modi nihil sapiente saepe, laboriosam nobis distinctio doloremque voluptatem sint officia itaque fuga odio, dicta magnam rerum earum!</p>
+
+          <div class="col-sm-5">
+            <div id="shadow" class="card bg-info text-white mt-3">
+
+                <h4 class="card-header text-center bg-secondary mb-4">BMI Calculator</h4>
+                <div class="card-body">
+                <div class="form-group row">
+                  <form id="bmiForm" method="get">
+                    <div class="col-xs-3 ">
+                      <label for="weight" class="font-weight-bold ml-1">Weight(lb):</label>
+                      <input type="number" id="bmiWeight" class="bmiReset m-2" min="0" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
+                    </div>
+                    <div class="col-xs-3">
+                      <label for="heightft" class="font-weight-bold ml-1">Height(ft):</label>
+                      <input type="number" id="bmiHeightft" class="bmiReset m-2" min="0" onkeydown="limitOne(this);" onkeyup="limitOne(this);">
+                    </div>
+
+                    <div class="col-xs-3">
+                      <label for="height" class="font-weight-bold ml-1">Height(in):</label>
+                      <input type="number" id="bmiHeightin" class="bmiReset m-2" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);" onchange="inches(this)">
+                    </div>
+                    <br><button type="button" class="btn btn-secondary mt-2 ml-2" id="bmiCalc">Calculate</button>
+                    <button type="button" class="btn btn-secondary mt-2 " id="bmiReset">Reset</button>
+                </div>
+                <br>
+
+
+
+
+
+                </form>
+              </div>
+
+
+            </div>
+          </div>
+
+<div>
+<h3 class="text-right" id="bmiResults"></h3>
+<p class="text-right" id="chartInfo"></p>
+</div>
+
+
+        </div>
+        <div class="tab-pane fade" id="nav-bmr" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <div class="col-sm-5">
+            <div id="shadow" class="card bg-info text-white mt-3">
+              <div class="card-body">
+                <h4 class="card-header text-center bg-secondary mb-4 rounded">BMR Calculator</h4>
+                <div class="form-group row">
+                  <form id="bmrForm" class="calc" method="get">
+                    <div>
+                      <label for="age" class="font-weight-bold ml-1">Age:</label>
+                      <input type="number" id="bmrAge" class="m-1" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);">
+                    </div>
+                    <div>
+                      <label for="weight" class="font-weight-bold ml-1">Weight:</label>
+                      <input type="number" id="bmrWeight" class="m-1" min="0" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
+                    </div>
+                    <div>
+                      <label for="heightft" class="font-weight-bold ml-1">Height(ft):</label>
+                      <input type="number" id="bmrHeightft" class="m-1" min="0" onkeydown="limitOne(this);" onkeyup="limitOne(this);">
+                    </div>
+                    <div>
+                      <label for="heightin" class="font-weight-bold ml-1">Height(in):</label>
+                      <input type="number" id="bmrHeightin" class="m-1" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);">
+                    </div>
+                    <div>
+                      <br><input type="radio" name="gender" class="m-2" id="male" value="male">Male
+                      <input type="radio" name="gender" class="m-2" id="female" value="female">Female
+                    </div>
+                    <br><button type="button" class="btn btn-secondary" id="bmrCalc1">Calculate</button>
+                  </form>
+                  <br>
+                  <h3 id="bmrResults"></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+      </div>
+
+
+
+
+
+
+      <!-- <div class="row">
+        <div class="col-sm-5">
+          <div id="shadow" class="card bg-info text-white">
+            <div class="card-body">
+              <h4 class="card-title">BMI Calculator</h4>
+              <div class="form-group row">
+                <form id="bmiForm" method="get">
+                  <div class="col-xs-3 ">
+                    <label for="weight">Weight:</label>
+                    <input type="number" id="bmiWeight" class="bmiReset" min="0" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
+                  </div>
+                  <div class="col-xs-3">
+                    <label for="heightft">Height(ft):</label>
+                    <input type="number" id="bmiHeightft" class="bmiReset" min="0" onkeydown="limitOne(this);" onkeyup="limitOne(this);">
+                  </div>
+
+                  <div class="col-xs-3">
+                    <label for="height">Height(in):</label>
+                    <input type="number" id="bmiHeightin" class="bmiReset" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);" onchange="inches(this)">
+                  </div>
+                  <br><button type="button" class="btn btn-primary" id="bmiCalc">Calculate</button>
+                  <button type="button" class="btn btn-primary" id="bmiReset">Reset</button>
+              </div>
+              <br>
+              <h3 id="bmiResults"></h3>
+              <p id="chartInfo"></p>
+
+
+
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-5">
+          <div id="shadow" class="card bg-info text-white">
+            <div class="card-body">
+              <h2 class="card-title">BMR Calculator</h2>
+              <div class="form-group row">
+                <form id="bmrForm"class="calc" method="get">
+                  <div>
+                    <label for="age">Age:</label>
+                    <input type="number" id="bmrAge" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);">
+                  </div>
+                  <div>
+                    <label for="weight">Weight(in lbs):</label>
+                    <input type="number" id="bmrWeight" min="0" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
+                  </div>
+                  <div>
+                    <label for="heightft">Height(ft):</label>
+                    <input type="number" id="bmrHeightft" min="0" onkeydown="limitOne(this);" onkeyup="limitOne(this);">
+                  </div>
+                  <div>
+                    <label for="heightin">Height(in):</label>
+                    <input type="number" id="bmrHeightin" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);">
+                  </div>
+                  <div>
+                    <br><input type="radio" name="gender" id="male" value="male">Male
+                    <br><input type="radio" name="gender" id="female" value="female">Female
+                  </div>
+                  <br><button type="button" class="btn btn-primary" id="bmrCalc1">Calculate</button>
+                </form>
+                <br>
+                <h3 id="bmrResults"></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </section>
+
+  <section class="py-5 bg-image-full" style="background-image: url('https://images.unsplash.com/photo-1507598641400-ec3536ba81bc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5d1d7de142e03475cdc90421d6c2bf2a&auto=format&fit=crop&w=1950&q=80');">
+
+    <div style="height: 100px;"></div>
+  </section>
+  <section class="py-5" id="mealRandom">
+    <div class="container">
+      <h1>Meal Randomizer</h1>
+      <p class="lead">Running out of ideas?? Use the Meal Randomizer below to switch things up!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
+      <h2 class="text-center">Click The Button Below To Start</h2>
+      <br><button type="button" class="btn btn-secondary btn-lg btn-block" id="randomMeal">Get Your Meal</button>
+    </div>
+    <br>
+
+
+    <div id="hide" class="container">
+      <div class="card flex-row flex-wrap bg-light text-light  w-100 mb-3" id="shadow">
+        <div class="card-header">
+          <div class="h2 card-text text-center outer" id="meat"></div>
+          <img id="picP" class="card-img rounded mealPic" src="" alt="">
+        </div>
+        <div class="card-body d-inline-flex bg-dark text-white">
+        <div class="h3 text-right pr-5 pt-5 mt-5" id="caloriesP"></div>
+          <div class=" h3 text-right pr-5 pt-5 mt-5" id="proteinP"></div>
+          <div class=" h3 text-right pr-5 pt-5 mt-5" id="fatP"></div>
+          <div class=" h3 text-right pr-5 pt-5 mt-5" id="carbP"></div>
+        </div>
+      </div>
+
+      <div class="card flex-row flex-wrap bg-light text-light w-100 mb-3" id="shadow">
+        <div class="card-header">
+          <div class=" h2 card-text text-center outer" id="carb"></div>
+          <img id="picC" class="card-img rounded mealPic" src="" alt="">
+        </div>
+        <div class="card-body d-inline-flex bg-dark text-white">
+        <div class="h3 text-right pr-5 pt-5 mt-5" id="caloriesC"></div>
+          <div class=" h3 text-right pr-5 pt-5 mt-5" id="proteinC"></div>
+          <div class=" h3 text-right pr-5 pt-5 mt-5" id="fatC"></div>
+          <div class=" h3 text-right pr-5 pt-5 mt-5" id="carbC"></div>
+        </div>
+      </div>
+
+      <div class="card flex-row flex-wrap bg-light text-light w-100 mb-3" id="shadow">
+        <div class="card-header">
+          <div class=" h2 card-text text-center outer" id="veg"></div>
+          <img id="picV" class="card-img rounded mealPic" src="" alt="">
+        </div>
+        <div class="card-body d-inline-flex bg-dark text-white">
+        <div class="h3 text-right pr-5 pt-5 mt-5" id="caloriesV"></div>
+          <div class=" h3 text-right pr-5 pt-5 mt-5" id="proteinV"></div>
+          <div class=" h3 text-right pr-5 pt-5 mt-5" id="fatV"></div>
+          <div class=" h3 text-right pr-5 pt-5 mt-5" id="carbV"></div>
+        </div>
+      </div>
+  </div>
+
+
+    <br>
+
+    <button type="button" class="btn btn-primary" id="mealReset">Reset</button>
+    <br><br>
+
+
+
+
+
+    <footer class="py-4" style="background-color: #0c4404;">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; 2018 Mayweather Health Tools</p>
+      </div>
+
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="mht.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
