@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Mayweather Fitness</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/mayweatherhealth.css" rel="stylesheet">
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #0c4404;">
+    <div class="container">
+      <a class="navbar-brand" href="#">Mayweather Health Tools</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Calculators</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Meal Randomizer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Workout Randomizer</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <header class="py-5 bg-image-full" style="background-image: url('https://images.unsplash.com/photo-1463123081488-789f998ac9c4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f5d193d06f7ebcea646619c419a05ce6&auto=format&fit=crop&w=1950&q=80');">
+    <div style="height: 100px;"></div>
+  </header>
+
+
+  <section class="py-5">
+    <div class="container">
+      <h1>Section Heading</h1>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
+    </div>
+  </section>
+
+
+  <section class="py-5 bg-image-full" style="background-image: url('https://images.unsplash.com/photo-1507598641400-ec3536ba81bc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5d1d7de142e03475cdc90421d6c2bf2a&auto=format&fit=crop&w=1950&q=80');">
+
+    <div style="height: 100px;"></div>
+  </section>
+
+
+  <section class="py-5">
+    <div class="container">
+      <h1>Calculators</h1>
+      <p class="lead">BMI, BMR and Water Intake</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
+
+      <div class="row">
+        <div class="col-sm-5">
+          <div id="shadow" class="card bg-info text-white">
+            <div class="card-body">
+              <h4 class="card-title">BMI Calculator</h4>
+              <div class="form-group row">
+                <form class="calc" method="get">
+                  <div class="col-xs-3">
+                    <label for="weight">Weight:</label>
+                    <input type="number" class="form-control" id="bmiWeight" min="0" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
+                  </div>
+                  <div class="col-xs-3">
+                    <label for="heightft">Height(ft):</label>
+                    <input type="number" class="form-control" id="bmiHeightft" min="0" onkeydown="limitOne(this);" onkeyup="limitOne(this);">
+                  </div>
+
+                  <div class="col-xs-3">
+                    <label for="height">Height(in):</label>
+                    <input type="number" class="form-control" id="bmiHeightin" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);" onchange="inches(this)">
+                  </div>
+                  <br><button type="button" class="btn btn-primary" id="bmiCalc">Calculate</button>
+              </div>
+              <br>
+              <h3 id="bmiResults"></h3>
+              <p id="chartInfo"></p>
+
+
+
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-5">
+              <div id="shadow" class="card bg-info text-white">
+              <div class="card-body">
+                <h2 class="card-title">BMR Calculator</h2>
+                <div class="form-group row">
+                <form class="calc" method="get">
+                  <div>
+                    <label for="age">Age:</label>
+                    <input type="number" id="bmrAge" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);">
+                  </div>
+                  <div>
+                    <label for="weight">Weight(in lbs):</label>
+                    <input type="number" id="bmrWeight" min="0" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
+                  </div>
+                  <div>
+                    <label for="heightft">Height(ft):</label>
+                    <input type="number" id="bmrHeightft" min="0" onkeydown="limitOne(this);" onkeyup="limitOne(this);">
+                  </div>
+                  <div>
+                    <label for="heightin">Height(in):</label>
+                    <input type="number" id="bmrHeightin" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);">
+                  </div>
+                  <div>
+                    <br><input type="radio" name="gender" id="male" value="male">Male
+                    <br><input type="radio" name="gender" id="female" value="female">Female
+                  </div>
+                  <br><button type="button" class="btn btn-primary" id="bmrCalc1">Calculate</button>
+                </form>
+                <h3 id="bmrResults"></h3>
+              </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="py-4" style="background-color: #0c4404;">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; 2018 Mayweather Health Tools</p>
+    </div>
+
+  </footer>
+
+  <script src="mht.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
