@@ -27,37 +27,105 @@ var bmiResults = Math.round(bmi);
         document.getElementById("chartInfo").textContent = ("Please check your height and weight and try again");
       }
 }
-//Calulate BMI on click
-document.getElementById('bmiCalc').addEventListener("click", bmiCalc);
+
+// Hide style
+function bmiShow() {
+   document.getElementById('bmiHide').style.display = "block";
+}
+
+// Calulate BMI and show results onclick
+$(document).ready(function(){
+    $('#bmiCalc').click(function(){
+       bmiCalc();
+       bmiShow();
+    });
+});
 
 
-//Rest BMI input on clock
+//Reset BMI input on clock
 function bmiReset() {
 document.getElementById("bmiForm").reset();
 }
 document.getElementById('bmiReset').addEventListener("click", bmiReset);
 
-function bmrCalc() {
   // Get user info
-    var age = parseInt(document.getElementById("bmrAge").value);
-    var weight = parseInt(document.getElementById("bmrWeight").value);
-    var heightft = parseInt(document.getElementById("bmrHeightft").value);
-    var heightin = parseInt(document.getElementById("bmrHeightin").value);
+var bmrFemale;
+var bmrMale;
+function bmrCalc() {
+    age = parseInt(document.getElementById("bmrAge").value);
+    weight = parseInt(document.getElementById("bmrWeight").value);
+    heightft = parseInt(document.getElementById("bmrHeightft").value);
+    heightin = parseInt(document.getElementById("bmrHeightin").value);
 // Calculate user info
 if (document.getElementById('male').checked) {
   var heightTotal = heightft * 12 + +heightin;
-  var bmrMale = 66 + (6.23 * weight) + (12.7 * heightTotal) - (6.8 * age).toFixed(1);
-  document.getElementById("bmrResults").textContent = bmrMale;
+  bmrMale = 66 + (6.23 * weight) + (12.7 * heightTotal) - (6.8 * age);
+  document.getElementById("bmrResults").textContent = ("Your BMR is " +bmrMale.toFixed(1));
  } else if (document.getElementById('female').checked) {
   var heightTotal = heightft * 12 + +heightin;
-  var bmrFemale = 655 + (4.35 * weight) + (4.7 * heightTotal) - (4.7 * age).toFixed(1);
-  document.getElementById("bmrResults").textContent = bmrFemale;
+  bmrFemale = 655 + (4.35 * weight) + (4.7 * heightTotal) - (4.7 * age);
+  document.getElementById("bmrResults").textContent = ("Your BMR is " +bmrFemale.toFixed(1));
     }
+   }
+
+var male = document.getElementById("male");
+var female = document.getElementById("female");
+var activity = document.getElementById("select");
+activity.addEventListener("change", energy);
+function energy(){
+  if (female.checked) {
+  var eFemale = Math.round(bmrFemale * activity.value);
+  document.getElementById('maintain').textContent = ("You need "+eFemale+ " calories daily to maintain your weight");
+  document.getElementById('onePound').textContent = ((eFemale -500)+ " calories daily to lose one pound a week");
+  document.getElementById('twoPound').textContent = ((eFemale -1000)+ " calories daily to lose two pounds a week");
+  document.getElementById('gPound').textContent = ((eFemale +500)+ " calories daily to gain one pound a week");
+  document.getElementById('gTwoPound').textContent = ((eFemale +1000)+ " calories daily to gain two pounds a week");
+  }
+  else if (male.checked) {
+  var eMale = Math.round(bmrMale * activity.value);
+    document.getElementById('maintain').textContent = ("You need " +eMale+ " calories to maintain your weight");
+    document.getElementById('onePound').textContent = ((eMale -500)+ " calories daily to lose one pound a week");
+    document.getElementById('twoPound').textContent = ((eMale -1000)+ " calories daily to lose two pounds a week");
+    document.getElementById('gPound').textContent = ((eMale +500)+ " calories daily to gain one pound a week");
+    document.getElementById('gTwoPound').textContent = ((eMale +1000)+ " calories daily to gain two pounds a week");
+  }
 }
-//Calulate BMR on click
-document.getElementById('bmrCalc1').addEventListener("click", bmrCalc);
+
+
+// Hide style
+function bmrShow() {
+   document.getElementById("bmrHide").style.display = "block";
+}
+
+//Calulate BMR and show results on click
+$(document).ready(function(){
+    $('#bmrCalc1').click(function(){
+       bmrCalc();
+       bmrShow();
+
+    });
+});
+
+function bmrReset() {
+document.getElementById("bmrForm").reset();
+}
+document.getElementById('bmrReset').addEventListener("click", bmrReset);
 
 // input limits
+var bmiFormI = document.getElementById("bmiForm")
+bmiFormI.addEventListener("keydown", function(e) {
+if ([69, 187, 188, 189, 190].includes(e.keyCode)) {
+    e.preventDefault();
+  }
+})
+
+var bmrFormI = document.getElementById("bmrForm")
+bmrFormI.addEventListener("keydown", function(e) {
+if ([69, 187, 188, 189, 190].includes(e.keyCode)) {
+    e.preventDefault();
+  }
+})
+
 function inches(input) {
     if (input.value < 0) input.value = 0;
     if (input.value > 11) input.value = 11;
@@ -117,57 +185,80 @@ var veg = [
   //{type: 'Squash', calories: 212, protein: 29.33, fat: 9.67, carbs: 0},
 ];
 
+var calorieP;
+var proteinP;
+var fatP;
+var carbP;
 function randomProtein() {
 var randomNumber = Math.floor(Math.random()*5+0);
 var typeP = protein[randomNumber].type;
-var calorieP = protein[randomNumber].calories;
-var proteinP = protein[randomNumber].protein;
-var fatP = protein[randomNumber].fat;
-var carbP = protein[randomNumber].carbs;
+calorieP = protein[randomNumber].calories;
+proteinP = protein[randomNumber].protein;
+fatP = protein[randomNumber].fat;
+carbP = protein[randomNumber].carbs;
 var picP = protein[randomNumber].img;
 document.getElementById("meat").textContent = typeP;
-document.getElementById("caloriesP").textContent = "Calories: " +calorieP;
-document.getElementById("proteinP").textContent = "Protein: " +proteinP;
-document.getElementById("fatP").textContent = "Fat: " +fatP;
-document.getElementById("carbP").textContent = "Carbs: " +carbP;
+document.getElementById("caloriesP").textContent = ("Calories: " +calorieP);
+document.getElementById("proteinP").textContent = ("Protein: " +proteinP.toFixed(1)+"g");
+document.getElementById("fatP").textContent = ("Fat: " +fatP.toFixed(1)+"g");
+document.getElementById("carbP").textContent = ("Carbs: " +carbP.toFixed(1)+"g");
 document.getElementById("picP").src = picP;
-
 }
 
+var calorieC;
+var proteinC;
+var fatC;
+var carbC;
 function randomCarb() {
 var randomNumber = Math.floor(Math.random()*5+0);
 var typeC = carb[randomNumber].type;
-var calorieC = carb[randomNumber].calories;
-var proteinC = carb[randomNumber].protein;
-var fatC = carb[randomNumber].fat;
-var carbC = carb[randomNumber].carbs;
+ calorieC = carb[randomNumber].calories;
+ proteinC = carb[randomNumber].protein;
+ fatC = carb[randomNumber].fat;
+ carbC = carb[randomNumber].carbs;
 var picC= carb[randomNumber].img;
 document.getElementById("carb").textContent = typeC;
-document.getElementById("caloriesC").textContent = "Calories: " +calorieC;
-document.getElementById("proteinC").textContent = "Protein: " +proteinC;
-document.getElementById("fatC").textContent = "Fat: " +fatC;
-document.getElementById("carbC").textContent = "Carbs: " +carbC;
+document.getElementById("caloriesC").textContent = ("Calories: " +calorieC);
+document.getElementById("proteinC").textContent = ("Protein: " +proteinC.toFixed(1)+"g");
+document.getElementById("fatC").textContent = ("Fat: " +fatC.toFixed(1)+"g");
+document.getElementById("carbC").textContent = ("Carbs: " +carbC.toFixed(1)+"g");
 document.getElementById("picC").src = picC;
 }
 
+
+var calorieV;
+var proteinV;
+var fatV;
+var carbV;
 function randomVeg() {
 var randomNumber = Math.floor(Math.random()*9+0);
 var typeV = veg[randomNumber].type;
-var calorieV = veg[randomNumber].calories;
-var proteinV = veg[randomNumber].protein;
-var fatV = veg[randomNumber].fat;
-var carbV = veg[randomNumber].carbs;
+ calorieV = veg[randomNumber].calories;
+ proteinV = veg[randomNumber].protein;
+ fatV = veg[randomNumber].fat;
+ carbV = veg[randomNumber].carbs;
 var picV= veg[randomNumber].img;
 document.getElementById("veg").textContent = typeV;
-document.getElementById("caloriesV").textContent = "Calories: " +calorieV;
-document.getElementById("proteinV").textContent = "Protein: " +proteinV;
-document.getElementById("fatV").textContent = "Fat: " +fatV;
-document.getElementById("carbV").textContent = "Carbs: " +carbV;
+document.getElementById("caloriesV").textContent = ("Calories: " +calorieV);
+document.getElementById("proteinV").textContent = ("Protein: " +proteinV.toFixed(1)+"g");
+document.getElementById("fatV").textContent = ("Fat: " +fatV.toFixed(1)+"g");
+document.getElementById("carbV").textContent = ("Carbs: " +carbV.toFixed(1)+"g");
 document.getElementById("picV").src = picV;
 }
 
-function showDiv() {
-   document.getElementById('hide').style.display = "block";
+function totalValue(){
+  var totalCal = calorieP + calorieC + calorieV;
+  var totalPro = proteinP + proteinC + proteinV;
+  var totalFat = fatP + fatC + fatV;
+  var totalCarb = carbP + carbC + carbV;
+  document.getElementById("totalCal").textContent = ("Calories: " +totalCal);
+  document.getElementById("totalPro").textContent = ("Protein: " +totalPro.toFixed(1)+"g");
+  document.getElementById("totalFat").textContent = ("Fat: " +totalFat.toFixed(1)+"g");
+  document.getElementById("totalCarb").textContent = ("Carbs: " +totalCarb.toFixed(1)+"g");
+  }
+
+function showMeal() {
+   document.getElementById('mealHide').style.display = "block";
 }
 
 $(document).ready(function(){
@@ -175,9 +266,27 @@ $(document).ready(function(){
        randomProtein();
        randomCarb();
        randomVeg();
-       showDiv();
+       showMeal();
+       totalValue();
     });
 });
+
+//Water Intake
+var intWater = document.getElementById('activeW');
+function water() {
+var intWeight = document.getElementById('intWeight').value;
+var totalWater = Math.round(intWater.value * intWeight);
+document.getElementById("totalWater").textContent = ("You need " +totalWater+ " ounces of water daily");
+}
+
+$(document).ready(function(){
+    $('#intCalc').click(function(){
+       water();
+     });
+});
+
+
+
 
 
 // Reset Button for Meal Randomizer
@@ -186,19 +295,51 @@ function mealReset(){
   document.getElementById("carb").textContent = "";
   document.getElementById("veg").textContent = "";
 }
-document.getElementById('mealReset').addEventListener("click", mealReset);
+// document.getElementById('mealReset').addEventListener("click", mealReset);
 
-// var cardio = ['elliptical' , 'arc trainer' , 'treadmill'];
-// var upper = [
-//   {muscle:'bicep' , exercises: ['cable curl', 'dumbbell curl', 'hammer curl'] },
-//   {muscle: 'tricep', exercises: ['tricep extension' , 'dips' , 'skull crusher'] },
-//   {muscle: }
-//
-// var lower = ['quadricep' , 'hamstring' , 'calf' , 'glute'];
-//
-//
-// function randomWorkout() {};
+var cardio = ['Elliptical' , 'Arc Trainer' , 'Treadmill' , 'StairMaster' , 'Stationary Bike'];
+var upper = [
+  {muscle:'Bicep' , exercises: ['Cable Curl', 'Dumbbell Curl', 'Hammer Curl']},
+  {muscle: 'Tricep', exercises: ['Tricep Extension' , 'Dips' , 'Skull Crusher']},
+  {muscle: 'Chest', exercises: ['Dumbbell Press' , 'Fly', 'Incline Chest Press']},
+  {muscle: 'Shoulder', exercises: ['Shoulder Press' , 'Front Raises' , 'Lateral Raises']},
+];
 
+var lower = [
+  {muscle:'Quadricep', exercises: ['Leg Press', 'Leg Extensions', 'Squats']},
+  {muscle: 'Hamstring', exercises: ['Lying Hamstring Curl', 'Leg Curls', 'Lunges']},
+  {muscle: 'Calf', exercises: ['Calf Raises']},
+   ];
+
+function randomCardio() {
+  var cardioEx = cardio[Math.floor(Math.random()*cardio.length)];
+  document.getElementById('cardioEx').textContent = cardioEx;
+}
+
+function randomUpper() {
+  var randomNumber = Math.floor(Math.random()*4+0);
+  var upperMus = upper[randomNumber].muscle;
+  var upperEx = upper[randomNumber].exercises;
+  document.getElementById('upperMus').textContent = upperMus;
+  document.getElementById('upperEx').textContent = upperEx;
+}
+
+function randomLower() {
+  var randomNumber = Math.floor(Math.random()*3+0);
+  var lowerMus = lower[randomNumber].muscle;
+  var lowerEx = lower[randomNumber].exercises;
+  document.getElementById('lowerMus').textContent = lowerMus;
+  document.getElementById('lowerEx').textContent = lowerEx;
+}
+
+$(document).ready(function(){
+    $('#randomEx').click(function(){
+       randomCardio();
+       randomUpper();
+       randomLower();
+
+    });
+});
 
 
 //Mifflin-St. Jeor Equation

@@ -34,7 +34,7 @@
             <a class="nav-link" href="#mealRandom">Meal Randomizer</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Workout Randomizer</a>
+            <a class="nav-link" href="#workRandom">Workout Randomizer</a>
           </li>
         </ul>
       </div>
@@ -43,7 +43,7 @@
 
 
 
-  <header class="py-5 bg-image-full" style="background-image: url('https://images.unsplash.com/photo-1463123081488-789f998ac9c4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f5d193d06f7ebcea646619c419a05ce6&auto=format&fit=crop&w=1950&q=80');">
+  <header class="py-5 bg-image-full" style="background-image: url('images/hoach-le-dinh-91879-unsplash.jpg');">
     <div style="height: 100px;"></div>
   </header>
 
@@ -53,13 +53,11 @@
       <h1 class="display-4">Welcome to Mayweather Health Tools</h1>
       <p class="lead">Providing the tools needed to maintain a healthy lifestyle.</p>
       <p>Below yo delectus odit vel itaque amet.</p>
-
-
     </div>
   </section>
 
 
-  <section class="py-5 bg-image-full" style="background-image: url('https://images.unsplash.com/photo-1507598641400-ec3536ba81bc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5d1d7de142e03475cdc90421d6c2bf2a&auto=format&fit=crop&w=1950&q=80');">
+  <section class="py-5 bg-image-full" style="background-image: url('images/ian-baldwin-27931-unsplash.jpg');">
 
     <div style="height: 100px;"></div>
   </section>
@@ -73,26 +71,27 @@
 
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link active bg-info text-white " id="nav-home-tab" data-toggle="tab" href="#nav-bmi" role="tab" aria-controls="nav-bmi" aria-selected="true">BMI</a>
-          <a class="nav-item nav-link bg-info text-white " id="nav-profile-tab" data-toggle="tab" href="#nav-bmr" role="tab" aria-controls="nav-bmr" aria-selected="false">BMR</a>
-          <a class="nav-item nav-link bg-info text-white" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+          <a class="nav-item nav-link active bg-info text-white " id="nav-bmi-tab" data-toggle="tab" href="#nav-bmi" role="tab" aria-controls="nav-bmi" aria-selected="true">BMI</a>
+          <a class="nav-item nav-link bg-info text-white " id="nav-bmr-tab" data-toggle="tab" href="#nav-bmr" role="tab" aria-controls="nav-bmr" aria-selected="false">BMR</a>
+          <a class="nav-item nav-link bg-info text-white" id="nav-water-tab" data-toggle="tab" href="#nav-water" role="tab" aria-controls="nav-water" aria-selected="false">Water Intake</a>
         </div>
       </nav>
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-bmi" role="tabpanel" aria-labelledby="nav-home-tab">
           <p class="h5 text-center">Please Enter Your Information Below</p>
-<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ut ad quo modi nihil sapiente saepe, laboriosam nobis distinctio doloremque voluptatem sint officia itaque fuga odio, dicta magnam rerum earum!</p>
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ut ad quo modi nihil sapiente saepe, laboriosam nobis distinctio doloremque voluptatem sint officia itaque fuga odio, dicta magnam rerum earum!</p>
 
+          <div class="row">
           <div class="col-sm-5">
             <div id="shadow" class="card bg-info text-white mt-3">
 
-                <h4 class="card-header text-center bg-secondary mb-4">BMI Calculator</h4>
-                <div class="card-body">
+              <h4 class="card-header text-center bg-secondary mb-4">BMI Calculator</h4>
+              <div class="card-body">
                 <div class="form-group row">
                   <form id="bmiForm" method="get">
                     <div class="col-xs-3 ">
                       <label for="weight" class="font-weight-bold ml-1">Weight(lb):</label>
-                      <input type="number" id="bmiWeight" class="bmiReset m-2" min="0" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
+                      <input type="number" id="bmiWeight" class="bmiReset m-2" min="0" required pattern="[0-9]" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
                     </div>
                     <div class="col-xs-3">
                       <label for="heightft" class="font-weight-bold ml-1">Height(ft):</label>
@@ -104,33 +103,42 @@
                       <input type="number" id="bmiHeightin" class="bmiReset m-2" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);" onchange="inches(this)">
                     </div>
                     <br><button type="button" class="btn btn-secondary mt-2 ml-2" id="bmiCalc">Calculate</button>
-                    <button type="button" class="btn btn-secondary mt-2 " id="bmiReset">Reset</button>
+                    <button type="button" class="btn btn-secondary mt-2" id="bmiReset">Reset</button>
+
                 </div>
-                <br>
-
-
-
-
-
                 </form>
               </div>
-
-
             </div>
           </div>
 
-<div>
-<h3 class="text-right" id="bmiResults"></h3>
-<p class="text-right" id="chartInfo"></p>
-</div>
+        <div id="bmiHide" class="col-sm-6 h-25 mt-3" role="alert">
+        <div class="alert alert-info">
+            <div class= "h4 alert-heading">Results</h4><hr>
+            <h3 class="text-left" id="bmiResults"></h3>
+            <p class="text-left" id="chartInfo"></p>
+            </div>
+            </div>
 
-
+        <div>
+            <p class="bg-secondary text-light mb-1">BMI less than 19 - Underweight</p>
+            <p class="bg-success text-light mb-1">BMI between 19 and 24.9 - Normal </p>
+            <p class="bg-warning text-light mb-1">BMI between 25 and 29.9 - Overweight</p>
+            <p class="bg-warning text-light mb-1">BMI between 30 and 39.9 - Obese</p>
+            <p class="bg-danger text-light mb-1">BMI between 40 and 54 - Extreme Obesity</p>
         </div>
+        </div>
+        </div>
+        </div>
+
         <div class="tab-pane fade" id="nav-bmr" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <p class="h4 text-center">Enter Your information to receive your Basal Metabolic Rate</p>
+          <p class="lead text-center">BMR measures your Basil Metabolic Rate or how many calories you need to maintain your weight.</p>
+         <div class="row">
           <div class="col-sm-5">
             <div id="shadow" class="card bg-info text-white mt-3">
+
+              <h4 class="card-header text-center bg-secondary mb-4">BMR Calculator</h4>
               <div class="card-body">
-                <h4 class="card-header text-center bg-secondary mb-4 rounded">BMR Calculator</h4>
                 <div class="form-group row">
                   <form id="bmrForm" class="calc" method="get">
                     <div>
@@ -138,7 +146,7 @@
                       <input type="number" id="bmrAge" class="m-1" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);">
                     </div>
                     <div>
-                      <label for="weight" class="font-weight-bold ml-1">Weight:</label>
+                      <label for="weight" class="font-weight-bold ml-1">Weight(lb):</label>
                       <input type="number" id="bmrWeight" class="m-1" min="0" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
                     </div>
                     <div>
@@ -153,97 +161,88 @@
                       <br><input type="radio" name="gender" class="m-2" id="male" value="male">Male
                       <input type="radio" name="gender" class="m-2" id="female" value="female">Female
                     </div>
-                    <br><button type="button" class="btn btn-secondary" id="bmrCalc1">Calculate</button>
+                    <br><button type="button" class="btn btn-secondary mt-2" id="bmrCalc1">Calculate</button>
+                    <button type="button" class="btn btn-secondary mt-2" id="bmrReset">Reset</button>
                   </form>
-                  <br>
-                  <h3 id="bmrResults"></h3>
+
+
                 </div>
               </div>
             </div>
           </div>
 
+    <div id="bmrHide" style="display:none" class="col-sm-7 h-75 mt-3">
+    <div class="alert alert-info" role="alert">
+      <h4 class="alert-heading">Results</h4><hr>
+      <h3 class="text-left" id="bmrResults"></h3>
+  </div>
+  <p class= "font-weight-bold">Select Your Activity Level To Receive Your TDEE*</p>
+  <div class = "mt-3">
+  <select id= "select">
+    <option value="0">None</option>
+    <option value="1.2">Sedentary = BMR X 1.2 (little or no exercise, desk job)</option>
+    <option value="1.375">Lightly Active = BMR X 1.375 (light exercise/sports 1-3 days/wk)</option>
+    <option value="1.55">Moderately Active = BMR X 1.55 (moderate exercise/sports 3-5 days/wk)</option>
+    <option value="1.725">Very Active = BMR X 1.725 (hard exercise/sports 6-7 days/wk)</option>
+    <option value="1.9">Extremely Active = BMR X 1.9 (hard daily exercise/sports & physical job)</option>
+  </select>
+</div>
+<p id="maintain" class="mt-2 mb-0 bg-info text-light"></p>
+<p id="onePound" class="m-0 mt-1 bg-success text-light"></p>
+<p id="twoPound" class="m-0 bg-success text-light"></p>
+<p id="gPound" class="mt-1 mb-0 bg-secondary text-light"></p>
+<p id="gTwoPound" class="m-0 bg-secondary text-light"></p>
+
+  <p class= "h6 font-italic">*Total Daily Energy Expenditure</p>
+</div>
+<br>
+</div>
+
+</div>
+
+        <div class="tab-pane fade" id="nav-water" role="tabpanel" aria-labelledby="nav-contact-tab">
+          <div class="row">
+          <div class="card mt-3 w-50" id="shadow">
+          <h4 class="card-header text-center bg-secondary text-light">Water Intake Calculator</h4>
+          <div class="card-body bg-info text-light h-100">
+            <div class="form-group row">
+              <form id="waterForm" method="get">
+                <div class="col-xs-3 d-flex align-items-start">
+                  <label for="weight" class="font-weight-bold h6 ml-1 mt-2">Weight(lb):</label>
+                  <input type="number" id="intWeight" class="mt-1 mr-2" min="0" required pattern="[0-9]" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
+
+
+                <p class="h6 font-weight-bold mb-0 mt-2 mr-1">Activity Level:</p>
+                  <select id= "activeW" class="mt-1">
+                    <option value="0.55">Less Than an Hour Workout</option>
+                    <option value="0.67">One Hour Workout</option>
+                    <option value="0.79">One Hour+ Workout</option>
+                  </select>
+
+</div>
+
+          <div>
+          <button type="button" class="btn btn-secondary mt-1 float-right" id="intCalc">Calculate</button>
+<p class="h5 text-center font-weight-bold mt-2 bg-secondary w-75 rounded" id="totalWater"></p>
+          </div>
+
+</form>
+
+
+</div>
+
+</div>
+</div>
+
+
+
         </div>
-        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
       </div>
 
 
-
-
-
-
-      <!-- <div class="row">
-        <div class="col-sm-5">
-          <div id="shadow" class="card bg-info text-white">
-            <div class="card-body">
-              <h4 class="card-title">BMI Calculator</h4>
-              <div class="form-group row">
-                <form id="bmiForm" method="get">
-                  <div class="col-xs-3 ">
-                    <label for="weight">Weight:</label>
-                    <input type="number" id="bmiWeight" class="bmiReset" min="0" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
-                  </div>
-                  <div class="col-xs-3">
-                    <label for="heightft">Height(ft):</label>
-                    <input type="number" id="bmiHeightft" class="bmiReset" min="0" onkeydown="limitOne(this);" onkeyup="limitOne(this);">
-                  </div>
-
-                  <div class="col-xs-3">
-                    <label for="height">Height(in):</label>
-                    <input type="number" id="bmiHeightin" class="bmiReset" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);" onchange="inches(this)">
-                  </div>
-                  <br><button type="button" class="btn btn-primary" id="bmiCalc">Calculate</button>
-                  <button type="button" class="btn btn-primary" id="bmiReset">Reset</button>
-              </div>
-              <br>
-              <h3 id="bmiResults"></h3>
-              <p id="chartInfo"></p>
-
-
-
-              </form>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-5">
-          <div id="shadow" class="card bg-info text-white">
-            <div class="card-body">
-              <h2 class="card-title">BMR Calculator</h2>
-              <div class="form-group row">
-                <form id="bmrForm"class="calc" method="get">
-                  <div>
-                    <label for="age">Age:</label>
-                    <input type="number" id="bmrAge" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);">
-                  </div>
-                  <div>
-                    <label for="weight">Weight(in lbs):</label>
-                    <input type="number" id="bmrWeight" min="0" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
-                  </div>
-                  <div>
-                    <label for="heightft">Height(ft):</label>
-                    <input type="number" id="bmrHeightft" min="0" onkeydown="limitOne(this);" onkeyup="limitOne(this);">
-                  </div>
-                  <div>
-                    <label for="heightin">Height(in):</label>
-                    <input type="number" id="bmrHeightin" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);">
-                  </div>
-                  <div>
-                    <br><input type="radio" name="gender" id="male" value="male">Male
-                    <br><input type="radio" name="gender" id="female" value="female">Female
-                  </div>
-                  <br><button type="button" class="btn btn-primary" id="bmrCalc1">Calculate</button>
-                </form>
-                <br>
-                <h3 id="bmrResults"></h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
   </section>
 
-  <section class="py-5 bg-image-full" style="background-image: url('https://images.unsplash.com/photo-1507598641400-ec3536ba81bc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5d1d7de142e03475cdc90421d6c2bf2a&auto=format&fit=crop&w=1950&q=80');">
+  <section class="py-5 bg-image-full" style="background-image: url('images/erol-ahmed-407736-unsplash.jpg');">
 
     <div style="height: 100px;"></div>
   </section>
@@ -257,18 +256,17 @@
     </div>
     <br>
 
-
-    <div id="hide" class="container">
-      <div class="card flex-row flex-wrap bg-light text-light  w-100 mb-3" id="shadow">
+    <div id="mealHide" class="container">
+      <div class="card flex-row flex-wrap bg-light text-light w-100 mb-3" id="shadow">
         <div class="card-header">
           <div class="h2 card-text text-center outer" id="meat"></div>
           <img id="picP" class="card-img rounded mealPic" src="" alt="">
         </div>
         <div class="card-body d-inline-flex bg-dark text-white">
-        <div class="h3 text-right pr-5 pt-5 mt-5" id="caloriesP"></div>
-          <div class=" h3 text-right pr-5 pt-5 mt-5" id="proteinP"></div>
-          <div class=" h3 text-right pr-5 pt-5 mt-5" id="fatP"></div>
-          <div class=" h3 text-right pr-5 pt-5 mt-5" id="carbP"></div>
+          <div class="h3 text-right pr-4 pl-3 pt-5 mt-5" id="caloriesP"></div>
+          <div class=" h3 text-right pr-4 pl-3 pt-5 mt-5" id="proteinP"></div>
+          <div class=" h3 text-right pr-4 pl-3 pt-5 mt-5" id="fatP"></div>
+          <div class=" h3 text-right pr-4 pl-3 pt-5 mt-5" id="carbP"></div>
         </div>
       </div>
 
@@ -278,10 +276,10 @@
           <img id="picC" class="card-img rounded mealPic" src="" alt="">
         </div>
         <div class="card-body d-inline-flex bg-dark text-white">
-        <div class="h3 text-right pr-5 pt-5 mt-5" id="caloriesC"></div>
-          <div class=" h3 text-right pr-5 pt-5 mt-5" id="proteinC"></div>
-          <div class=" h3 text-right pr-5 pt-5 mt-5" id="fatC"></div>
-          <div class=" h3 text-right pr-5 pt-5 mt-5" id="carbC"></div>
+          <div class="h3 text-right pr-4 pl-3 pt-5 mt-5" id="caloriesC"></div>
+          <div class=" h3 text-right pr-4 pl-3 pt-5 mt-5" id="proteinC"></div>
+          <div class=" h3 text-right pr-4 pl-3 pt-5 mt-5" id="fatC"></div>
+          <div class=" h3 text-right pr-4 pl-3 pt-5 mt-5" id="carbC"></div>
         </div>
       </div>
 
@@ -291,35 +289,67 @@
           <img id="picV" class="card-img rounded mealPic" src="" alt="">
         </div>
         <div class="card-body d-inline-flex bg-dark text-white">
-        <div class="h3 text-right pr-5 pt-5 mt-5" id="caloriesV"></div>
-          <div class=" h3 text-right pr-5 pt-5 mt-5" id="proteinV"></div>
-          <div class=" h3 text-right pr-5 pt-5 mt-5" id="fatV"></div>
-          <div class=" h3 text-right pr-5 pt-5 mt-5" id="carbV"></div>
+          <div class="h3 text-right pr-4 pl-3 pt-5 mt-5" id="caloriesV"></div>
+          <div class=" h3 text-right pr-4 pl-3 pt-5 mt-5" id="proteinV"></div>
+          <div class=" h3 text-right pr-4 pl-3 pt-5 mt-5" id="fatV"></div>
+          <div class=" h3 text-right pr-4 pl-3 pt-5 mt-5" id="carbV"></div>
         </div>
       </div>
+
+      <div class="card bg-light text-light" id="shadow">
+        <div class="card-header">
+          <p class="card-title h2 text-light outer text-center w-100 mb-1">Total Nutrition Facts</p>
+      <div class="card-body bg-dark text-white text-center w-100 d-inline-flex">
+      <p class="h3 ml-3 pr-5 pl-5" id="totalCal"></p>
+      <p class="h3 ml-3 pr-5 pl-5" id="totalPro"></p>
+      <p class="h3 ml-3 pr-5 pl-5" id="totalFat"></p>
+      <p class="h3 ml-3 pr-5 pl-5" id="totalCarb"></p>
+      </div>
+      </div>
+        </div>
+      <p class="lead mt-2"> *all nutritional facts are per 100g</p>
+    </div>
+
+    <!-- <button type="button" class="btn btn-primary" id="mealReset">Reset</button> -->
+    <br><br>
+  </section>
+
+
+
+  <div id="workRandom" class="container">
+    <h1> Workout Randomizer </h1>
+    <p class="lead">Wanting to spice up your oridinary workout? Give the Workout Randomizer a shot!</p>
+
+    <p class="h2" id="cardioEx"></p>
+
+
+    <p class="h2" id="upperMus"></p>
+    <p class="h3" id="upperEx"></p>
+
+    <p class="h2" id="lowerMus"></p>
+    <p class="h3" id="lowerEx"></p>
+
+
+    <button type="button" class="btn btn-secondary btn-lg btn-block" id="randomEx">Get your Workout</button>
+
+
   </div>
 
 
-    <br>
-
-    <button type="button" class="btn btn-primary" id="mealReset">Reset</button>
-    <br><br>
 
 
 
+  <footer class="py-4" style="background-color: #0c4404;">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; 2018 Mayweather Health Tools</p>
+    </div>
 
+  </footer>
 
-    <footer class="py-4" style="background-color: #0c4404;">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; 2018 Mayweather Health Tools</p>
-      </div>
-
-    </footer>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="mht.js"></script>
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="mht.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
