@@ -18,7 +18,7 @@ body {
 }
 
 
-#shadow {
+.shadow {
   box-shadow: 10px 10px 5px gray;
 }
 
@@ -45,7 +45,7 @@ h1 {
 }
 
 label {
-  display: inline-block; width: 88px; text-align: left;
+  display: table-cell;  width: 76px; text-align: left;
 }
 
 input {
@@ -53,6 +53,14 @@ input {
   background: #fff;
 }
 
-#intWeight {
+.waterInput {
   width: 90px;
+}
+
+.bmiInput{
+  width: 100px;
+}
+
+.bmrInput{
+  width: 120px;
 }

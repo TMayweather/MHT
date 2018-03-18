@@ -1,57 +1,114 @@
-function bmiCalc() {
+
+function bmiCalcI() {
 // Get user info
   var weight = parseInt(document.getElementById("bmiWeight").value);
   var heightft = parseInt(document.getElementById("bmiHeightft").value);
   var heightin = parseInt(document.getElementById("bmiHeightin").value);
 // Calculate user info
 var heightTotal = heightft * 12 + +heightin;
-var bmi = ((weight / Math.pow(heightTotal, 2)) * 703).toFixed(1);
-document.getElementById("bmiResults").textContent = ("Your BMI is " + bmi);
-var bmiResults = Math.round(bmi);
-      if (bmiResults < 19) {
-    document.getElementById("chartInfo").textContent = ("You are in the 'Underweight' range");
+ var bmi = ((weight / Math.pow(heightTotal, 2)) * 703).toFixed(1);
+document.getElementById("bmiResults1").textContent = ("Your BMI is " + bmi);
+
+      if (bmi < 19) {
+    document.getElementById("chartInfo1").textContent = ("You are in the 'Underweight' range");
       }
-      else if (bmiResults < 25) {
-        document.getElementById("chartInfo").textContent = ("You are in the 'Normal' range");
+      else if (bmi< 25) {
+        document.getElementById("chartInfo1").textContent = ("You are in the 'Normal' range");
       }
-      else if (bmiResults < 30) {
-        document.getElementById("chartInfo").textContent = ("You are in the 'Overweight' range");
+      else if (bmi< 30) {
+        document.getElementById("chartInfo1").textContent = ("You are in the 'Overweight' range");
       }
-      else if (bmiResults < 40) {
-        document.getElementById("chartInfo").textContent = ("You are in the 'Obese' range");
+      else if (bmi< 40) {
+        document.getElementById("chartInfo1").textContent = ("You are in the 'Obese' range");
       }
-      else if (bmiResults < 100) {
-      document.getElementById("chartInfo").textContent = ("You are in the 'Extreme Obesity' range");
+      else if (bmi < 54) {
+      document.getElementById("chartInfo1").textContent = ("You are in the 'Extreme Obesity' range");
     }
       else {
-        document.getElementById("chartInfo").textContent = ("Please check your height and weight and try again");
+        document.getElementById("chartInfo1").textContent = ("Please check your height and weight and try again");
       }
 }
 
-// Hide style
-function bmiShow() {
-   document.getElementById('bmiHide').style.display = "block";
-}
+// show/hide imperial BMI
+function bmiShowI() {
+   document.getElementById('bmiHide1').style.display = "block";
+   }
 
-// Calulate BMI and show results onclick
+function bmiHideI() {
+      document.getElementById('bmiHide1').style.display = "none";
+    }
+
+
+// Calulate imperial BMI and show results onclick
 $(document).ready(function(){
-    $('#bmiCalc').click(function(){
-       bmiCalc();
-       bmiShow();
+    $('#bmiCalcI').click(function(){
+       bmiCalcI();
+       bmiShowI();
     });
 });
 
 
 //Reset BMI input on clock
-function bmiReset() {
+function bmiResetI() {
 document.getElementById("bmiForm").reset();
 }
 document.getElementById('bmiReset').addEventListener("click", bmiReset);
 
-  // Get user info
+function bmiCalcM() {
+// Get user info
+  var weight = parseInt(document.getElementById("bmiKg").value);
+  var height = parseInt(document.getElementById("bmiCm").value);
+
+// Calculate user info
+
+ var bmiMet = ((weight / Math.pow(height, 2)) * 10000).toFixed(1);
+document.getElementById("bmiResults2").textContent = ("Your BMI is " + bmiMet);
+
+      if (bmiMet < 19) {
+    document.getElementById("chartInfo2").textContent = ("You are in the 'Underweight' range");
+      }
+      else if (bmiMet < 25) {
+        document.getElementById("chartInfo2").textContent = ("You are in the 'Normal' range");
+      }
+      else if (bmiMet < 30) {
+        document.getElementById("chartInfo2").textContent = ("You are in the 'Overweight' range");
+      }
+      else if (bmiMet < 40) {
+        document.getElementById("chartInfo2").textContent = ("You are in the 'Obese' range");
+      }
+      else if (bmiMet < 54) {
+      document.getElementById("chartInfo2").textContent = ("You are in the 'Extreme Obesity' range");
+    }
+      else {
+        document.getElementById("chartInfo2").textContent = ("Please check your height and weight and try again");
+      }
+}
+
+
+
+// calc metric BMI and show results onclick
+$(document).ready(function(){
+    $('#bmiCalcM').click(function(){
+       bmiCalcM();
+       bmiShowM();
+    });
+});
+
+
+//hide bmi met
+function bmiShowM() {
+   document.getElementById('bmiHide2').style.display = "block";
+   }
+
+function bmiHideM() {
+      document.getElementById('bmiHide2').style.display = "none";
+    }
+
+
+// Get user info
 var bmrFemale;
 var bmrMale;
-function bmrCalc() {
+function bmrCalcI() {
     age = parseInt(document.getElementById("bmrAge").value);
     weight = parseInt(document.getElementById("bmrWeight").value);
     heightft = parseInt(document.getElementById("bmrHeightft").value);
@@ -59,15 +116,16 @@ function bmrCalc() {
 // Calculate user info
 if (document.getElementById('male').checked) {
   var heightTotal = heightft * 12 + +heightin;
-  bmrMale = 66 + (6.23 * weight) + (12.7 * heightTotal) - (6.8 * age);
+  bmrMale = 66.47 + (6.23 * weight) + (12.7 * heightTotal) - (6.755 * age);
   document.getElementById("bmrResults").textContent = ("Your BMR is " +bmrMale.toFixed(1));
  } else if (document.getElementById('female').checked) {
   var heightTotal = heightft * 12 + +heightin;
-  bmrFemale = 655 + (4.35 * weight) + (4.7 * heightTotal) - (4.7 * age);
+  bmrFemale = 655.1 + (4.35 * weight) + (4.7 * heightTotal) - (4.7 * age);
   document.getElementById("bmrResults").textContent = ("Your BMR is " +bmrFemale.toFixed(1));
     }
    }
 
+//TDEE for imperial BMR
 var male = document.getElementById("male");
 var female = document.getElementById("female");
 var activity = document.getElementById("select");
@@ -92,24 +150,107 @@ function energy(){
 }
 
 
-// Hide style
-function bmrShow() {
-   document.getElementById("bmrHide").style.display = "block";
+// Hide/Show Imperial BMR
+function bmrShowI() {
+   document.getElementById("bmrHide1").style.display = "block";
 }
 
-//Calulate BMR and show results on click
+function bmrHideI() {
+   document.getElementById("bmrHide1").style.display = "none";
+}
+
+
+//Calulate Imperial BMR and show results on click
 $(document).ready(function(){
-    $('#bmrCalc1').click(function(){
-       bmrCalc();
-       bmrShow();
+    $('#bmrCalcI').click(function(){
+       bmrCalcI();
+       bmrShowI();
 
     });
 });
 
+// toggle BMI radios
+$("input[name$='types']").change(function(){
+   $('#bmi1').toggle();
+    $('#bmi2').toggle();
+    bmiHideI();
+    bmiHideM();
+  });
+
+//reset bmi on click - NEEDS WORK
 function bmrReset() {
 document.getElementById("bmrForm").reset();
 }
 document.getElementById('bmrReset').addEventListener("click", bmrReset);
+
+
+//BMR metric formula
+var bmrFemaleM;
+var bmrMaleM;
+function bmrCalcM() {
+  var age = parseInt(document.getElementById("bmrAgeM").value);
+  var weight = parseInt(document.getElementById("bmrKg").value);
+  var height = parseInt(document.getElementById("bmrCm").value);
+
+// Calculate user info
+if (document.getElementById('maleM').checked) {
+  bmrMaleM = 66.47 + (13.75 * weight) + (5.003 * height) - (6.755 * age);
+  document.getElementById("bmrResults2").textContent = ("Your BMR is " +bmrMaleM.toFixed(1));
+} else if (document.getElementById('femaleM').checked) {
+
+  bmrFemaleM = 655.1 + (9.563 * weight) + (1.85 * height) - (4.7 * age);
+  document.getElementById("bmrResults2").textContent = ("Your BMR is " +bmrFemaleM.toFixed(1));
+    }
+   }
+
+// TDEE metric BMI
+   var maleM = document.getElementById("maleM");
+   var femaleM = document.getElementById("femaleM");
+   var activityM = document.getElementById("selectM");
+   activityM.addEventListener("change", energyM);
+   function energyM(){
+     if (femaleM.checked) {
+     var eFemale = Math.round(bmrFemaleM * activityM.value);
+     document.getElementById('maintainM').textContent = ("You need "+eFemale+ " calories daily to maintain your weight");
+     document.getElementById('onePoundM').textContent = ((eFemale -500)+ " calories daily to lose 0.07 stone a week");
+     document.getElementById('twoPoundM').textContent = ((eFemale -1000)+ " calories daily to lose 0.14 stone a week");
+     document.getElementById('gPoundM').textContent = ((eFemale +500)+ " calories daily to gain 0.07 stone a week");
+     document.getElementById('gTwoPoundM').textContent = ((eFemale +1000)+ " calories daily to gain 0.14 stone a week");
+     }
+     else if (maleM.checked) {
+     var eMale = Math.round(bmrMaleM * activityM.value);
+       document.getElementById('maintainM').textContent = ("You need " +eMale+ " calories to maintain your weight");
+       document.getElementById('onePoundM').textContent = ((eMale -500)+ " calories daily to lose 0.07 stone a week");
+       document.getElementById('twoPoundM').textContent = ((eMale -1000)+ " calories daily to lose 0.14 stone a week");
+       document.getElementById('gPoundM').textContent = ((eMale +500)+ " calories daily to gain 0.07 stone a week");
+       document.getElementById('gTwoPoundM').textContent = ((eMale +1000)+ " calories daily to gain 0.14 stone a week");
+     }
+   }
+
+// hide/show for bmr
+   function bmrShowM() {
+      document.getElementById("bmrHide2").style.display = "block";
+   }
+   function bmrHideM() {
+      document.getElementById("bmrHide2").style.display = "none";
+   }
+
+   //Calulate metric BMR and show results on click
+   $(document).ready(function(){
+       $('#bmrCalcM').click(function(){
+          bmrCalcM();
+          bmrShowM();
+
+       });
+   });
+
+   // toggle bmr radios
+      $("input[name$='bmr']").change(function(){
+         $('#bmr1').toggle();
+          $('#bmr2').toggle();
+          bmrHideI();
+          bmrHideM();
+        });
 
 // input limits
 var bmiFormI = document.getElementById("bmiForm")
@@ -170,7 +311,6 @@ var carb = [
   {type: 'Sweet Potato', calories: 90, protein: 2.01, fat: 0.15, carbs: 20.71, img: "images/pexels-photo-89247.png"}
   ];
 
-
 var veg = [
   {type: 'Green Beans', calories: 35, protein: 1.89, fat: 0.28, carbs: 7.88, img: "images/pexels-photo-185473.jpeg"},
   {type: 'Broccoli', calories: 33, protein: 3.83, fat: 0.52, carbs: 3.12, img: "images/brocoli-vegetables-salad-green-161514.jpeg"},
@@ -179,10 +319,8 @@ var veg = [
   {type: 'Kale', calories: 28, protein: 1.84, fat: 0.40, carbs: 5.63, img: "images/kale-2317181_640.jpg"},
   {type: 'Cauliflower', calories: 23, protein: 29.33, fat: 0.45, carbs: 4.11, img: "images/pexels-photo-461245.jpeg"},
   {type: 'Sweet Peas', calories: 84, protein: 5.36, fat: 0.22, carbs: 15.63, img: "images/pexels-photo-255469.jpeg"},
-  //{type: 'Corn', calories: 212, protein: 29.33, fat: 9.67, carbs: 0},
   {type: 'Zucchini', calories: 15, protein: 1.14, fat: 0.36, carbs: 2.69, img: "images/pexels-photo-128420.jpeg"},
   {type: 'Cabbage', calories: 12, protein: 1.10	, fat: 0.17	, carbs: 2.23, img: "images/pexels-photo-209482.jpeg"},
-  //{type: 'Squash', calories: 212, protein: 29.33, fat: 9.67, carbs: 0},
 ];
 
 var calorieP;
@@ -224,7 +362,6 @@ document.getElementById("fatC").textContent = ("Fat: " +fatC.toFixed(1)+"g");
 document.getElementById("carbC").textContent = ("Carbs: " +carbC.toFixed(1)+"g");
 document.getElementById("picC").src = picC;
 }
-
 
 var calorieV;
 var proteinV;
@@ -285,18 +422,7 @@ $(document).ready(function(){
      });
 });
 
-
-
-
-
-// Reset Button for Meal Randomizer
-function mealReset(){
-  document.getElementById("meat").textContent = "";
-  document.getElementById("carb").textContent = "";
-  document.getElementById("veg").textContent = "";
-}
-// document.getElementById('mealReset').addEventListener("click", mealReset);
-
+//Workout Randomizer
 var cardio = ['Elliptical' , 'Arc Trainer' , 'Treadmill' , 'StairMaster' , 'Stationary Bike'];
 var upper = [
   {muscle:'Bicep' , exercises: ['Cable Curl', 'Dumbbell Curl', 'Hammer Curl']},
