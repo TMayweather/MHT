@@ -226,11 +226,11 @@
                   <option value="1.9">Extremely Active = BMR X 1.9 (hard daily exercise/sports & physical job)</option>
                 </select>
               </div>
-              <p id="maintain" class="mt-2 mb-0 bg-info text-light"></p>
-              <p id="onePound" class="m-0 mt-1 bg-success text-light"></p>
-              <p id="twoPound" class="m-0 bg-success text-light"></p>
-              <p id="gPound" class="mt-1 mb-0 bg-secondary text-light"></p>
-              <p id="gTwoPound" class="m-0 bg-secondary text-light"></p>
+                <h6 id="maintain" class="mt-2 mb-0 bg-info text-light font-weight-normal"></h6>
+                <h6 id="onePound" class="m-0 mt-1 bg-success text-light font-weight-normal"></h6>
+                <h6 id="twoPound" class="m-0 bg-success text-light font-weight-normal"></h6>
+                <h6 id="gPound" class="mt-1 mb-0 bg-secondary text-light font-weight-normal"></h6>
+                <h6 id="gTwoPound" class="m-0 bg-secondary text-light font-weight-normal"></h6>
               <p class="h6 font-italic">*Total Daily Energy Expenditure</p>
             </div>
           </div>
@@ -280,12 +280,12 @@
                   <option value="1.9">Extremely Active = BMR X 1.9 (hard daily exercise/sports & physical job)</option>
                 </select>
               </div>
-              <p id="maintainM" class="mt-2 mb-0 bg-info text-light"></p>
-              <p id="onePoundM" class="m-0 mt-1 bg-success text-light"></p>
-              <p id="twoPoundM" class="m-0 bg-success text-light"></p>
-              <p id="gPoundM" class="mt-1 mb-0 bg-secondary text-light"></p>
-              <p id="gTwoPoundM" class="m-0 bg-secondary text-light"></p>
-              <p class="h6 font-italic">*Total Daily Energy Expenditure</p>
+                <h6 id="maintainM" class="mt-2 mb-0 bg-info text-light font-weight-normal"></h6>
+                <h6 id="onePoundM" class="m-0 mt-1 bg-success text-light font-weight-normal"></h6>
+                <h6 id="twoPoundM" class="m-0 bg-success text-light font-weight-normal"></h6>
+                <h6 id="gPoundM" class="mt-1 mb-0 bg-secondary text-light font-weight-normal"></h6>
+                <h6 id="gTwoPoundM" class="m-0 bg-secondary text-light font-weight-normal"></h6>
+              <h6 class="h6 font-italic">*Total Daily Energy Expenditure</h6>
             </div>
           </div>
         </div>
@@ -391,13 +391,42 @@
   <div id="workRandom" class="container">
     <h1> Workout Randomizer </h1>
     <p class="lead">Wanting to spice up your oridinary workout? Give the Workout Randomizer a shot!</p>
-    <p class="h2" id="cardioEx"></p>
-    <p class="h2" id="upperMus"></p>
-    <p class="h3" id="upperEx"></p>
-    <p class="h2" id="lowerMus"></p>
-    <p class="h3" id="lowerEx"></p>
     <button type="button" class="btn btn-secondary btn-lg btn-block" id="randomEx">Get your Workout</button>
   </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      Cardio
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+<h5 class="card-title" id="cardioEx"></h5>
+    <h6 class="card-subtitle mb-2 text-muted">Get yo jiggy on</h6>
+  </div>
+</div>
+    </div>
+    <div class="col-sm">
+      Upper Body Workout
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+<h5 class="card-title" id="upperMus" ></h5>
+    <h6 class="card-subtitle mb-2 text-muted">Examples</h6>
+<p class="card-text" id="upperEx"></p>
+  </div>
+</div>
+    </div>
+    <div class="col-sm">
+       Lower Body Workout
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+<h5 class="card-title" id="lowerMus"></h5>
+    <h6 class="card-subtitle mb-2 text-muted">Examples</h6>
+<p class="card-text" id="lowerEx"></p>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
 
   <footer class="py-4" style="background-color: #0c4404;">
     <div class="container">
