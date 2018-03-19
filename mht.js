@@ -253,19 +253,19 @@ if (document.getElementById('maleM').checked) {
         });
 
 // input limits
-var bmiFormI = document.getElementById("bmiForm")
+var bmiFormI = document.getElementById("bmiForm");
 bmiFormI.addEventListener("keydown", function(e) {
 if ([69, 187, 188, 189, 190].includes(e.keyCode)) {
     e.preventDefault();
   }
-})
+});
 
-var bmrFormI = document.getElementById("bmrForm")
+var bmrFormI = document.getElementById("bmrForm");
 bmrFormI.addEventListener("keydown", function(e) {
 if ([69, 187, 188, 189, 190].includes(e.keyCode)) {
     e.preventDefault();
   }
-})
+});
 
 function inches(input) {
     if (input.value < 0) input.value = 0;
@@ -445,7 +445,7 @@ function randomCardio() {
 function randomUpper() {
   var randomNumber = Math.floor(Math.random()*4+0);
   var upperMus = upper[randomNumber].muscle;
-  var upperEx = upper[randomNumber].exercises;
+  var upperEx = upper[randomNumber].exercises.join(', ');
   document.getElementById('upperMus').textContent = upperMus;
   document.getElementById('upperEx').textContent = upperEx;
 }
@@ -453,9 +453,13 @@ function randomUpper() {
 function randomLower() {
   var randomNumber = Math.floor(Math.random()*3+0);
   var lowerMus = lower[randomNumber].muscle;
-  var lowerEx = lower[randomNumber].exercises;
+  var lowerEx = lower[randomNumber].exercises.join(', ');
   document.getElementById('lowerMus').textContent = lowerMus;
   document.getElementById('lowerEx').textContent = lowerEx;
+}
+
+function workShow() {
+  document.getElementById("workHide").style.display = "inline-flex";
 }
 
 $(document).ready(function(){
@@ -463,7 +467,8 @@ $(document).ready(function(){
        randomCardio();
        randomUpper();
        randomLower();
-
+       workShow();
+      
     });
 });
 

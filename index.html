@@ -10,6 +10,7 @@
   <title>Mayweather Health Tools</title>
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/mayweatherhealth.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
 </head>
 
@@ -48,9 +49,9 @@
 
   <section class="py-5">
     <div class="container">
-      <h1 class="display-4">Welcome to Mayweather Health Tools</h1>
-      <p class="lead">Providing the tools needed to maintain a healthy lifestyle.</p>
-      <p>Below yo delectus odit vel itaque amet.</p>
+      <h1 class="display-4 text-center">Mayweather Health Tools</h1>
+<p class="lead text-center">Providing the tools needed to maintain a healthy lifestyle.</p>
+      <p class="text-center">Below yo delectus odit vel itaque amet.</p>
     </div>
   </section>
 
@@ -68,21 +69,23 @@
 
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link active bg-info text-white " id="nav-bmi-tab" data-toggle="tab" href="#nav-bmi" role="tab" aria-controls="nav-bmi" aria-selected="true">BMI</a>
-          <a class="nav-item nav-link bg-info text-white " id="nav-bmr-tab" data-toggle="tab" href="#nav-bmr" role="tab" aria-controls="nav-bmr" aria-selected="false">BMR</a>
-          <a class="nav-item nav-link bg-info text-white" id="nav-water-tab" data-toggle="tab" href="#nav-water" role="tab" aria-controls="nav-water" aria-selected="false">Water Intake</a>
+          <a class="nav-item nav-link active bg-info text-white font-weight-bold" id="nav-bmi-tab" data-toggle="tab" href="#nav-bmi" role="tab" aria-controls="nav-bmi" aria-selected="true">BMI</a>
+        <a class="nav-item nav-link bg-info text-white font-weight-bold" id="nav-bmr-tab" data-toggle="tab" href="#nav-bmr" role="tab" aria-controls="nav-bmr" aria-selected="false">BMR</a>
+          <a class="nav-item nav-link bg-info text-white font-weight-bold" id="nav-water-tab" data-toggle="tab" href="#nav-water" role="tab" aria-controls="nav-water" aria-selected="false">Water Intake</a>
         </div>
       </nav>
       <div class="tab-content" id="nav-tabContent">
 
         <div class="tab-pane fade show active" id="nav-bmi" role="tabpanel" aria-labelledby="nav-home-tab">
 
-          <div id="bmiRadios" class="bg-info text-light mt-2 float-left">
-            <input type="radio" name="types" checked="checked" id="bmiI" value="1">Imperial
-            <input type="radio" name="types" class="ml-2" id="bmiM" value="2">Metric
+          <div id="bmiRadios" class="bg-secondary text-light mt-5 float-left">
+            <div class="d-flex flex-row">
+            <input type="radio" name="types" checked="checked" class="ml-2 mt-2" id="bmiI" value="1"><h6 class="ml-2 mr-2 mt-2">Imperial</h6>
+            <input type="radio" name="types" class="ml-2 mt-2" id="bmiM" value="2"><h6 class="ml-2 mr-2 mt-2">Metric</h6>
+          </div>
           </div>
           <p class="h5 text-center">Please Enter Your Information Below</p>
-          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ut ad quo modi nihil sapiente saepe, laboriosam nobis distinctio doloremque voluptatem sint officia itaque fuga odio, dicta magnam rerum earum!</p>
+          <p class="lead text-right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ut ad quo modi nihil sapiente saepe, laboriosam nobis distinctio doloremque voluptatem sint officia itaque fuga odio, dicta magnam rerum</p>
 
           <div class="row">
             <div class="col-sm-5" id="bmi1">
@@ -117,11 +120,11 @@
                 </div>
               </div>
               <div>
-                <p class="bg-secondary text-light mb-1">BMI less than 19 - Underweight</p>
-                <p class="bg-success text-light mb-1">BMI between 19 and 24.9 - Normal </p>
-                <p class="bg-warning text-light mb-1">BMI between 25 and 29.9 - Overweight</p>
-                <p class="bg-warning text-light mb-1">BMI between 30 and 39.9 - Obese</p>
-                <p class="bg-danger text-light mb-1">BMI between 40 and 54 - Extreme Obesity</p>
+                <h6 class="bg-secondary text-light font-weight-normal mb-1">BMI less than 19 - Underweight</h6>
+                <h6 class="bg-success text-light font-weight-normal mb-1">BMI between 19 and 24.9 - Normal </h6>
+                <h6 class="bg-warning text-light font-weight-normal mb-1">BMI between 25 and 29.9 - Overweight</h6>
+                <h6 class="bg-warning text-light font-weight-normal mb-1">BMI between 30 and 39.9 - Obese</h6>
+                <h6 class="bg-danger text-light font-weight-normal mb-1">BMI between 40 and 54 - Extreme Obesity</h6>
               </div>
             </div>
           </div>
@@ -160,23 +163,29 @@
               </div>
 
               <div>
-                <p class="bg-secondary text-light mb-1">BMI less than 19 - Underweight</p>
-                <p class="bg-success text-light mb-1">BMI between 19 and 24.9 - Normal </p>
-                <p class="bg-warning text-light mb-1">BMI between 25 and 29.9 - Overweight</p>
-                <p class="bg-warning text-light mb-1">BMI between 30 and 39.9 - Obese</p>
-                <p class="bg-danger text-light mb-1">BMI between 40 and 54 - Extreme Obesity</p>
+                <h6 class="bg-secondary text-light font-weight-normal mb-1">BMI less than 19 - Underweight</h6>
+                <h6 class="bg-success text-light font-weight-normal mb-1">BMI between 19 and 24.9 - Normal </h6>
+                <h6 class="bg-warning text-light font-weight-normal mb-1">BMI between 25 and 29.9 - Overweight</h6>
+                <h6 class="bg-warning text-light font-weight-normal mb-1">BMI between 30 and 39.9 - Obese</h6>
+                <h6 class="bg-danger text-light font-weight-normal mb-1">BMI between 40 and 54 - Extreme Obesity</h6>
               </div>
             </div>
           </div>
         </div>
 
         <div class="tab-pane fade" id="nav-bmr" role="tabpanel" aria-labelledby="nav-profile-tab">
-          <div id="bmrRadios" class="bg-info text-light mt-2 float-left">
-            <input type="radio" name="bmr" checked="checked" id="bmrUS" value="1">Imperial
-            <input type="radio" name="bmr" class="ml-2" id="bmrMet" value="2">Metric
-          </div>
-          <p class="h4 text-center">Enter Your information to receive your Basal Metabolic Rate</p>
-          <p class="lead text-center">BMR measures your Basil Metabolic Rate or how many calories you need to maintain your weight.</p>
+         <div id="bmrRadios" class="bg-secondary text-light mt-5 float-left">
+  <div class="d-flex flex-row">
+    <input type="radio" name="bmr" checked="checked" class="ml-2 mt-2" id="bmrUS" value="1">
+    <h6 class="ml-2 mr-2 mt-2">Imperial</h6>
+<input type="radio" name="bmr" class="ml-2 mt-2" id="bmrMet" value="2">
+    <h6 class="ml-2 mr-2 mt-2">Metric</h6>
+  </div>
+</div>
+          <p class="h5 text-center">Enter Your information to receive your Basal Metabolic Rate</p>
+          <p class="lead text-right">BMR measures your Basil Metabolic Rate or how many calories you will burn daily with little to no exercise. Please consult your doctor before starting any regimen or diet.</p>
+          
+         
           <div class="row">
             <div class="col-sm-5" id="bmr1">
               <div class="card bg-info text-white mt-3 shadow">
@@ -340,10 +349,10 @@
           <img id="picP" class="card-img rounded mealPic" src="" alt="">
         </div>
         <div class="card-body d-inline-flex bg-dark text-white">
-          <div class="h3 text-right pr-4 pl-3 pt-5 mt-5" id="caloriesP"></div>
-          <div class=" h3 text-right pr-4 pl-3 pt-5 mt-5" id="proteinP"></div>
-          <div class=" h3 text-right pr-4 pl-3 pt-5 mt-5" id="fatP"></div>
-          <div class=" h3 text-right pr-4 pl-3 pt-5 mt-5" id="carbP"></div>
+          <h3 class="h3 text-right pr-4 pl-3 pt-5 mt-5" id="caloriesP"></h3>
+          <h3 class="h3 text-right pr-4 pl-3 pt-5 mt-5" id="proteinP"></h3>
+          <h3 class="h3 text-right pr-4 pl-3 pt-5 mt-5" id="fatP"></h3>
+          <h3 class="h3 text-right pr-4 pl-3 pt-5 mt-5" id="carbP"></h3>
         </div>
       </div>
 
@@ -353,23 +362,23 @@
           <img id="picC" class="card-img rounded mealPic" src="" alt="">
         </div>
         <div class="card-body d-inline-flex bg-dark text-white">
-          <div class="h3 text-right pr-4 pl-3 pt-5 mt-5" id="caloriesC"></div>
-          <div class=" h3 text-right pr-4 pl-3 pt-5 mt-5" id="proteinC"></div>
-          <div class=" h3 text-right pr-4 pl-3 pt-5 mt-5" id="fatC"></div>
-          <div class=" h3 text-right pr-4 pl-3 pt-5 mt-5" id="carbC"></div>
+          <h3 class="h3 text-right pr-4 pl-3 pt-5 mt-5" id="caloriesC"></h3>
+          <h3 class="h3 text-right pr-4 pl-3 pt-5 mt-5" id="proteinC"></h3>
+          <h3 class="h3 text-right pr-4 pl-3 pt-5 mt-5" id="fatC"></h3>
+          <h3 class="h3 text-right pr-4 pl-3 pt-5 mt-5" id="carbC"></h3>
         </div>
       </div>
 
       <div class="card flex-row flex-wrap bg-light text-light w-100 mb-3 shadow">
         <div class="card-header">
-          <div class=" h2 card-text text-center outer" id="veg"></div>
+          <div class="h2 card-text text-center outer" id="veg"></div>
           <img id="picV" class="card-img rounded mealPic" src="" alt="">
         </div>
         <div class="card-body d-inline-flex bg-dark text-white">
-          <div class="h3 text-right pr-4 pl-3 pt-5 mt-5" id="caloriesV"></div>
-          <div class=" h3 text-right pr-4 pl-3 pt-5 mt-5" id="proteinV"></div>
-          <div class=" h3 text-right pr-4 pl-3 pt-5 mt-5" id="fatV"></div>
-          <div class=" h3 text-right pr-4 pl-3 pt-5 mt-5" id="carbV"></div>
+          <h3 class="h3 text-right pr-4 pl-3 pt-5 mt-5" id="caloriesV"></h3>
+          <h3 class="h3 text-right pr-4 pl-3 pt-5 mt-5" id="proteinV"></h3>
+          <h3 class="h3 text-right pr-4 pl-3 pt-5 mt-5" id="fatV"></h3>
+          <h3 class="h3 text-right pr-4 pl-3 pt-5 mt-5" id="carbV"></h3>
         </div>
       </div>
 
@@ -377,10 +386,10 @@
         <div class="card-header">
           <p class="card-title h2 text-light outer text-center w-100 mb-1">Total Nutrition Facts</p>
           <div class="card-body bg-dark text-white text-center w-100 d-inline-flex">
-            <p class="h3 ml-3 pr-5 pl-5" id="totalCal"></p>
-            <p class="h3 ml-3 pr-5 pl-5" id="totalPro"></p>
-            <p class="h3 ml-3 pr-5 pl-5" id="totalFat"></p>
-            <p class="h3 ml-3 pr-5 pl-5" id="totalCarb"></p>
+            <h3 class="h3 ml-3 pr-5 pl-5" id="totalCal"></h3>
+            <h3 class="h3 ml-3 pr-5 pl-5" id="totalPro"></h3>
+            <h3 class="h3 ml-3 pr-5 pl-5" id="totalFat"></h3>
+            <h3 class="h3 ml-3 pr-5 pl-5" id="totalCarb"></h3>
           </div>
         </div>
       </div>
@@ -391,37 +400,40 @@
   <div id="workRandom" class="container">
     <h1> Workout Randomizer </h1>
     <p class="lead">Wanting to spice up your oridinary workout? Give the Workout Randomizer a shot!</p>
-    <button type="button" class="btn btn-secondary btn-lg btn-block" id="randomEx">Get your Workout</button>
+    <button type="button" class="btn btn-secondary btn-lg btn-block mb-4" id="randomEx">Get your Workout</button>
   </div>
 
 <div class="container">
-  <div class="row">
+<div class="row" id="workHide" style="display:none">
     <div class="col-sm">
-      Cardio
+      <h5>Cardio</h5>
 <div class="card" style="width: 18rem;">
+<img class="card-img-top" src="\images\alexander-redl-185764-unsplash.jpg" alt="Card image cap">
   <div class="card-body">
-<h5 class="card-title" id="cardioEx"></h5>
+<h5 class="card-title bg-dark text-light" id="cardioEx"></h5>
     <h6 class="card-subtitle mb-2 text-muted">Get yo jiggy on</h6>
   </div>
 </div>
     </div>
     <div class="col-sm">
-      Upper Body Workout
+      <h5>Upper Body Workout</h5>
 <div class="card" style="width: 18rem;">
+<img class="card-img-top" src="\images\pexels-photo-416754.jpeg" alt="Card image cap">
   <div class="card-body">
-<h5 class="card-title" id="upperMus" ></h5>
+<h5 class="card-title bg-dark text-light" id="upperMus"></h5>
     <h6 class="card-subtitle mb-2 text-muted">Examples</h6>
-<p class="card-text" id="upperEx"></p>
+<p class="card-text font-italic" id="upperEx"></p>
   </div>
 </div>
     </div>
     <div class="col-sm">
-       Lower Body Workout
+      <h5>Lower Body Workout</h5>
 <div class="card" style="width: 18rem;">
+<img class="card-img-top" src="\images\scott-webb-22437-unsplash.jpg" alt="Card image cap">
   <div class="card-body">
-<h5 class="card-title" id="lowerMus"></h5>
+<h5 class="card-title bg-dark text-light" id="lowerMus"></h5>
     <h6 class="card-subtitle mb-2 text-muted">Examples</h6>
-<p class="card-text" id="lowerEx"></p>
+<p class="card-text font-italic" id="lowerEx"></p>
   </div>
 </div>
     </div>
