@@ -151,7 +151,6 @@ $("input[name$='bmr']").change(function () {
 // Imperial BMR
 var bmrFemale;
 var bmrMale;
-
 function bmrCalcI() {
   age = parseInt(document.getElementById("bmrAge").value);
   weight = parseInt(document.getElementById("bmrWeight").value);
@@ -174,7 +173,6 @@ var male = document.getElementById("male");
 var female = document.getElementById("female");
 var activity = document.getElementById("select");
 activity.addEventListener("change", energy);
-
 function energy() {
   if (female.checked) {
     var eFemale = Math.round(bmrFemale * activity.value);
@@ -260,7 +258,6 @@ var maleM = document.getElementById("maleM");
 var femaleM = document.getElementById("femaleM");
 var activityM = document.getElementById("selectM");
 activityM.addEventListener("change", energyM);
-
 function energyM() {
   if (femaleM.checked) {
     var eFemale = Math.round(bmrFemaleM * activityM.value);
@@ -534,7 +531,6 @@ var calorieP;
 var proteinP;
 var fatP;
 var carbP;
-
 function randomProtein() {
   var randomNumber = Math.floor(Math.random() * 5 + 0);
   var typeP = protein[randomNumber].type;
@@ -555,7 +551,6 @@ var calorieC;
 var proteinC;
 var fatC;
 var carbC;
-
 function randomCarb() {
   var randomNumber = Math.floor(Math.random() * 5 + 0);
   var typeC = carb[randomNumber].type;
@@ -576,7 +571,6 @@ var calorieV;
 var proteinV;
 var fatV;
 var carbV;
-
 function randomVeg() {
   var randomNumber = Math.floor(Math.random() * 9 + 0);
   var typeV = veg[randomNumber].type;
@@ -620,7 +614,6 @@ $(document).ready(function () {
 
 //Water Intake
 var intWater = document.getElementById('activeW');
-
 function water() {
   var intWeight = document.getElementById('intWeight').value;
   var totalWater = Math.round(intWater.value * intWeight);
@@ -630,31 +623,33 @@ function water() {
 function waterShow() {
   document.getElementById("waterHide").style.display = "block";
 }
-
 function waterHide() {
   document.getElementById("waterHide").style.display = "none";
 }
 
-$(document).ready(function () {
-  var inputWeight = $("input[id='intWeight']");
+  $(document).ready(function () {
+     var inputWeight = $("input[id='intWeight']");
   $('#intCalc').click(function () {
     if (inputWeight.val() == "") {
       inputWeight.addClass('inputError');
       $('#waterHide').hide();
       $('.error4').show();
-    } else {
-      water();
-      waterShow();
+    }
+    else {
+    water();
+    waterShow();
+    $('.error4').hide();
     }
   });
 });
 
 $(document).ready(function () {
-  $('#intReset').click(function () {
-    $('#waterForm')[0].reset();
-    waterHide();
-  });
-});
+      $('#intReset').click(function () {
+$('#waterForm')[0].reset();
+        waterHide();
+        });
+        });
+
 
 //Workout Randomizer
 var cardio = ['Elliptical', 'Arc Trainer', 'Treadmill', 'StairMaster', 'Stationary Bike'];
