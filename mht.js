@@ -1,4 +1,16 @@
 
+// Imperial/Metric Toggle
+$(document).ready(function () {
+ $("input[name$='bmr']").change(function () {
+   $('#bmr1').toggle();
+   $('#bmr2').toggle();
+   bmrHideI();
+   bmrHideM();
+ });
+});
+
+
+
 function bmiCalcI() {
 // Get user info
   var weight = parseInt(document.getElementById("bmiWeight").value);
@@ -39,16 +51,32 @@ function bmiHideI() {
     }
 
 
-// Calulate imperial BMI and show results onclick
+//Calulate imperial BMI and show results or errors onclick
 $(document).ready(function(){
+  var inputWeight = $("input[id='bmiWeight']");
+  var inputHeight = $("input[id='bmiHeightft']");
+  var inputHeightIn = $("input[id='bmiHeightin']");
     $('#bmiCalcI').click(function(){
+      if (inputWeight.val() == "" || inputHeight.val() =="" || inputHeightIn.val() =="") {
+        inputWeight.addClass('inputError');
+        inputHeight.addClass('inputError');
+        inputHeightIn.addClass('inputError');
+        $('.error').show();
+      }
+      else {
        bmiCalcI();
        bmiShowI();
+       $('.error').hide();
+       inputWeight.removeClass('inputError');
+       inputHeight.removeClass('inputError');
+       inputHeightIn.removeClass('inputError');
+      }
     });
 });
 
 
-//Reset BMI input on clock
+
+//Reset BMI input on click
 function bmiResetI() {
 document.getElementById("bmiForm").reset();
 }
@@ -84,25 +112,51 @@ document.getElementById("bmiResults2").textContent = ("Your BMI is " + bmiMet);
       }
 }
 
+//hide/show bmi met
+function bmiShowM() {
+  document.getElementById('bmiHide2').style.display = "block";
+}
 
+function bmiHideM() {
+  document.getElementById('bmiHide2').style.display = "none";
+}
 
 // calc metric BMI and show results onclick
 $(document).ready(function(){
+  var inputWeight = $("input[id='bmiKg']");
+  var inputHeight = $("input[id='bmiCm']");
     $('#bmiCalcM').click(function(){
+       if (inputWeight.val() == "" || inputHeight.val() == "") {
+        $('#bmiKg').addClass('inputError');
+        $('#bmiCm').addClass('inputError');
+        $('.error1').show();
+
+       }
+else {
        bmiCalcM();
        bmiShowM();
+       $('.error1').hide();
+       $('#bmiKg').removeClass('inputError');
+       $('#bmiCm').removeClass('inputError');
+      }
     });
 });
 
+//Toggles for Imperial/Metric
+$("input[name$='types']").change(function () {
+  $('#bmi1').toggle();
+  $('#bmi2').toggle();
+  bmiHideI();
+  bmiHideM();
+});
 
-//hide bmi met
-function bmiShowM() {
-   document.getElementById('bmiHide2').style.display = "block";
-   }
 
-function bmiHideM() {
-      document.getElementById('bmiHide2').style.display = "none";
-    }
+ $("input[name$='bmr']").change(function () {
+   $('#bmr1').toggle();
+   $('#bmr2').toggle();
+   bmrHideI();
+   bmrHideM();
+ });
 
 
 // Get user info
@@ -161,23 +215,32 @@ function bmrHideI() {
 
 
 //Calulate Imperial BMR and show results on click
-$(document).ready(function(){
-    $('#bmrCalcI').click(function(){
-       bmrCalcI();
-       bmrShowI();
-
-    });
+$(document).ready(function () {
+  var inputAge = $("input[id='bmrAge']");
+  var inputWeight = $("input[id='bmrWeight']");
+  var inputHeight = $("input[id='bmrHeightft']");
+  var inputHeightIn = $("input[id='bmrHeightin']");
+  $('#bmrCalcI').click(function () {
+    if (inputAge.val() == "" || inputWeight.val() == "" || inputHeight.val() == "" || inputHeightIn.val() == "" || male.checked == false && female.checked == false) {
+      inputAge.addClass('inputError');
+      inputWeight.addClass('inputError');
+      inputHeight.addClass('inputError');
+      inputHeightIn.addClass('inputError');
+      $('.error2').show();
+      $('#bmrHide1').hide();
+    } else {
+      bmrCalcI();
+      bmrShowI();
+      $('.error2').hide();
+       inputAge.removeClass('inputError');
+       $('#bmrWeight').removeClass('inputError');
+       $('#bmrHeightft').removeClass('inputError');
+       $('#bmrHeightin').removeClass('inputError');
+    }
+  });
 });
 
-// toggle BMI radios
-$("input[name$='types']").change(function(){
-   $('#bmi1').toggle();
-    $('#bmi2').toggle();
-    bmiHideI();
-    bmiHideM();
-  });
-
-//reset bmi on click - NEEDS WORK
+//reset bmr on click - NEEDS WORK
 function bmrReset() {
 document.getElementById("bmrForm").reset();
 }
@@ -203,7 +266,7 @@ if (document.getElementById('maleM').checked) {
     }
    }
 
-// TDEE metric BMI
+// TDEE metric BMR
    var maleM = document.getElementById("maleM");
    var femaleM = document.getElementById("femaleM");
    var activityM = document.getElementById("selectM");
@@ -244,29 +307,52 @@ if (document.getElementById('maleM').checked) {
        });
    });
 
-   // toggle bmr radios
-      $("input[name$='bmr']").change(function(){
-         $('#bmr1').toggle();
-          $('#bmr2').toggle();
-          bmrHideI();
-          bmrHideM();
-        });
+   $(document).ready(function () {
+     var inputAge = $("input[id='bmrAgeM']");
+     var inputWeight = $("input[id='bmrKg']");
+     var inputHeight = $("input[id='bmrCm']");
+     
+     $('#bmrCalcM').click(function () {
+       if (inputAge.val() == "" || inputWeight.val() == "" || inputHeight.val() == "" || maleM.checked == false && femaleM.checked == false) {
+         inputAge.addClass('inputError');
+         inputWeight.addClass('inputError');
+         inputHeight.addClass('inputError');
+         
+         $('.error3').show();
+         $('#bmrHide2').hide();
+       } else {
+         bmrCalcM();
+         bmrShowM();
+         $('.error3').hide();
+         inputAge.removeClass('inputError');
+         inputWeight.removeClass('inputError');
+         inputHeight.removeClass('inputError');
+        
+       }
+     });
+   });
+
+    $("input[name$='bmr']").change(function () {
+      $('#bmr1').toggle();
+      $('#bmr2').toggle();
+      bmrHideI();
+      bmrHideM();
+    });
+
+
+   
 
 // input limits
-var bmiFormI = document.getElementById("bmiForm");
-bmiFormI.addEventListener("keydown", function(e) {
-if ([69, 187, 188, 189, 190].includes(e.keyCode)) {
-    e.preventDefault();
-  }
-});
 
-var bmrFormI = document.getElementById("bmrForm");
-bmrFormI.addEventListener("keydown", function(e) {
-if ([69, 187, 188, 189, 190].includes(e.keyCode)) {
-    e.preventDefault();
-  }
-});
-
+var limitKeys = document.querySelectorAll('form');
+limitKeys.forEach(function(elem) {
+elem.addEventListener("keydown", function (e) {
+   if ([69, 187, 188, 189, 190].includes(e.keyCode)) {
+           e.preventDefault();
+   }
+          });
+      });
+      
 function inches(input) {
     if (input.value < 0) input.value = 0;
     if (input.value > 11) input.value = 11;
@@ -307,7 +393,7 @@ var carb = [
   {type: 'Brown Rice', calories: 123, protein: 2.74	, fat: 0.97, carbs: 25.58, img: "images/pexels-photo-723198.jpeg"},
   {type: 'Wild Rice', calories: 101, protein: 3.99, fat: 0.34,	 carbs: 21.34, img: "images/supersavory-wild-rice-pilaf-ck.jpg"},
   {type: 'Quinoa', calories: 120, protein: 4.40, fat: 1.92, carbs: 21.30, img: "images/pan-1832926_640.jpg"},
-  {type: 'Baked Potato', calories: 93, protein: 2.50, fat: 0.13, carbs: 21.15, img: "images/potatoes-vegetables-erdfrucht-bio-162673.jpeg"},
+  {type: 'Baked Potato', calories: 93, protein: 2.50, fat: 0.13, carbs: 21.15, img: "images/potatoes-vegetables-erdfrucht-bio-162673.jpg"},
   {type: 'Sweet Potato', calories: 90, protein: 2.01, fat: 0.15, carbs: 20.71, img: "images/pexels-photo-89247.png"}
   ];
 

@@ -11,6 +11,7 @@
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/mayweatherhealth.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 </head>
 
@@ -88,20 +89,21 @@
           <p class="lead text-right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ut ad quo modi nihil sapiente saepe, laboriosam nobis distinctio doloremque voluptatem sint officia itaque fuga odio, dicta magnam rerum</p>
 
           <div class="row">
-            <div class="col-sm-5" id="bmi1">
+            <div class="col-sm-6" id="bmi1">
               <div class="card calc bg-info text-white mt-3 shadow">
                 <h4 class="card-header text-center bg-secondary mb-2">BMI Calculator</h4>
                 <div class="card-body">
                   <div class="form-group row">
-                    <form id="bmiForm" method="get">
+                  <form id="bmiFormI" class="form" method="get">
+                    <div class="error text-center" style="display:none"> <h6>Please Fill Out All Fields</h6></div>
                       <div class="d-flex flex-row">
                         <label for="weight" class="font-weight-bold ml-1 mt-3">Weight:</label>
-                        <input type="number" id="bmiWeight" placeholder="Pounds" class="mt-3 mb-2 ml-2 mr-2" min="0" required pattern="[0-9]" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
+                        <input type="number" id="bmiWeight" placeholder="Pounds" class="mt-3 mb-2 ml-2 mr-2 inputBorder" min="0" required pattern="[0-9]" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
                       </div>
                       <div class="d-flex flex-row">
                         <label for="height" class="font-weight-bold ml-1 mt-3">Height:</label>
-                        <input type="number" id="bmiHeightft" placeholder="Feet" class="mt-3 mb-2 ml-2 mr-2 bmiInput" min="0" onkeydown="limitOne(this);" onkeyup="limitOne(this);">
-                        <input type="number" id="bmiHeightin" placeholder="Inches" class="mt-3 mb-2 ml-2 mr-2 bmiInput" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);" onchange="inches(this)">
+                        <input type="number" id="bmiHeightft" placeholder="Feet" class="mt-3 mb-2 ml-2 mr-2 bmiInput inputBorder" min="0" onkeydown="limitOne(this);" onkeyup="limitOne(this);">
+                        <input type="number" id="bmiHeightin" placeholder="Inches" class="mt-3 mb-2 ml-2 mr-2 bmiInput inputBorder" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);" onchange="inches(this)">
                       </div>
                       <br><button type="button" class="btn btn-secondary mt-2 ml-2" id="bmiCalcI">Calculate</button>
                       <button type="button" class="btn btn-secondary mt-2" id="bmiReset">Reset</button>
@@ -131,19 +133,20 @@
 
           <!-- bmi met calc -->
           <div class="row">
-            <div class="col-sm-5">
+            <div class="col-sm-6">
               <div id="bmi2" class="card calc bg-info text-white mt-3 shadow" style="display: none;">
                 <h4 class="card-header text-center bg-secondary mb-2">BMI Calculator</h4>
                 <div class="card-body">
                   <div class="form-group row">
-                    <form id="bmiMForm" method="get">
+                    <form id="bmiFormM" class="form" method="get">
+                      <div class="error1 text-center" style="display:none"> <h6>Please Fill Out All Fields</h6></div>
                       <div class="d-flex flex-row">
                         <label for="weight" class="font-weight-bold ml-1 mt-3">Weight:</label>
-                        <input type="number" id="bmiKg" placeholder="Kilograms" class="mt-3 mb-2 ml-2 mr-2" min="0" required pattern="[0-9]" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
+                        <input type="number" id="bmiKg" placeholder="Kilograms" class="mt-3 mb-2 ml-2 mr-2 inputBorder" min="0" required pattern="[0-9]" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
                       </div>
                       <div class="d-flex flex-row">
                         <label for="height" class="font-weight-bold ml-1 mt-3">Height:</label>
-                        <input type="number" id="bmiCm" placeholder="Centimeters" class="mt-3 mb-2 ml-2 mr-2" min="0" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
+                        <input type="number" id="bmiCm" placeholder="Centimeters" class="mt-3 mb-2 ml-2 mr-2 inputBorder" min="0" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
                       </div>
                       <br><button type="button" class="btn btn-secondary mt-2 ml-2" id="bmiCalcM">Calculate</button>
                       <button type="button" class="btn btn-secondary mt-2" id="bmiResetM">Reset</button>
@@ -184,27 +187,26 @@
 </div>
           <p class="h5 text-center">Enter Your information to receive your Basal Metabolic Rate</p>
           <p class="lead text-right">BMR measures your Basil Metabolic Rate or how many calories you will burn daily with little to no exercise. Please consult your doctor before starting any regimen or diet.</p>
-          
-         
           <div class="row">
-            <div class="col-sm-5" id="bmr1">
+            <div class="col-sm-6" id="bmr1">
               <div class="card bg-info text-white mt-3 shadow">
 
                 <h4 class="card-header text-center bg-secondary mb-2">BMR Calculator</h4>
                 <div class="card-body">
                   <div class="form-group row">
-                    <form id="bmrForm" class="calc" method="get">
+                    <form id="bmrFormI" class="calc" method="get">
+                       <div class="error2" style="display:none"> <h6>Please Fill Out All Fields</h6></div>
                       <div class="d-flex flex-row">
                         <label for="age" class="font-weight-bold ml-1 mt-3 ageLabel">Age:</label>
-                        <input type="number" id="bmrAge" class="mt-3 mb-2 ml-2 mr-2 bmrInput" placeholder="Age" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);">
+                        <input type="number" id="bmrAge" class="mt-3 mb-2 ml-2 mr-2 bmrInput inputBorder" placeholder="Age" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);">
 
                         <label for="weight" class="font-weight-bold ml-1 mt-3">Weight:</label>
-                        <input type="number" id="bmrWeight" class="mt-3 mb-2 ml-2 mr-2 bmrInput" placeholder="Pounds" min="0" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
+                        <input type="number" id="bmrWeight" class="mt-3 mb-2 ml-2 mr-2 bmrInput inputBorder" placeholder="Pounds" min="0" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
                       </div>
                       <div class="d-flex flex-row">
                         <label for="height" class="font-weight-bold ml-1 mt-3">Height:</label>
-                        <input type="number" id="bmrHeightft" class="mt-3 mb-2 ml-2 mr-2 bmiInput" placeholder="Feet" min="0" onkeydown="limitOne(this);" onkeyup="limitOne(this);">
-                        <input type="number" id="bmrHeightin" class="mt-3 mb-2 ml-2 mr-2 bmiInput" min="0" placeholder="Inches" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);">
+                        <input type="number" id="bmrHeightft" class="mt-3 mb-2 ml-2 mr-2 bmiInput inputBorder" placeholder="Feet" min="0" onkeydown="limitOne(this);" onkeyup="limitOne(this);">
+                        <input type="number" id="bmrHeightin" class="mt-3 mb-2 ml-2 mr-2 bmiInput inputBorder" min="0" placeholder="Inches" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);">
                       </div>
                       <div>
                         <br><input type="radio" name="gender" class="m-2" id="male" value="male">Male
@@ -218,7 +220,7 @@
               </div>
             </div>
 
-            <div id="bmrHide1" style="display:none" class="col-sm-7 h-75 mt-3">
+            <div id="bmrHide1" style="display:none" class="col-sm-6 h-75 mt-3">
               <div class="alert alert-info" role="alert">
                 <h4 class="alert-heading">Results</h4>
                 <hr>
@@ -227,7 +229,6 @@
               <p class="font-weight-bold">Select Your Activity Level To Receive Your TDEE*</p>
               <div class="mt-3">
                 <select id="select">
-                  <option value="0">None</option>
                   <option value="1.2">Sedentary = BMR X 1.2 (little or no exercise, desk job)</option>
                   <option value="1.375">Lightly Active = BMR X 1.375 (light exercise/sports 1-3 days/wk)</option>
                   <option value="1.55">Moderately Active = BMR X 1.55 (moderate exercise/sports 3-5 days/wk)</option>
@@ -245,21 +246,22 @@
           </div>
 
           <div class="row">
-            <div class="col-sm-5">
+            <div class="col-sm-6">
               <div id="bmr2" class="card bg-info text-white mt-3 shadow" style="display: none;">
                 <h4 class="card-header text-center bg-secondary mb-2">BMR Calculator</h4>
                 <div class="card-body">
                   <div class="form-group row">
-                    <form id="bmrForm" class="calc" method="get">
+                    <form id="bmrFormM" class="calc" method="get">
+                      <div class="error3 text-center" style="display:none"> <h6>Please Fill Out All Fields</h6></div>
                       <div class="d-flex flex-row">
                         <label for="age" class="font-weight-bold ml-1 mt-3 ageLabel">Age:</label>
-                        <input type="number" id="bmrAgeM" class="mt-3 mb-2 ml-2 mr-2 bmrInput" placeholder="Age" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);">
+                        <input type="number" id="bmrAgeM" class="mt-3 mb-2 ml-2 mr-2 bmrInput inputBorder" placeholder="Age" min="0" onkeydown="limitTwo(this);" onkeyup="limitTwo(this);">
                         <label for="weight" class="font-weight-bold ml-1 mt-3">Weight:</label>
-                        <input type="number" id="bmrKg" class="mt-3 mb-2 ml-2 mr-2 bmrInput" placeholder="Kilograms" min="0" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
+                        <input type="number" id="bmrKg" class="mt-3 mb-2 ml-2 mr-2 bmrInput inputBorder" placeholder="Kilograms" min="0" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
                       </div>
                       <div class="d-flex flex-row">
                         <label for="height" class="font-weight-bold ml-1 mt-3">Height:</label>
-                        <input type="number" id="bmrCm" class="mt-3 mb-2 ml-2 mr-2 bmiInput" placeholder="Centimeters" min="0" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
+                        <input type="number" id="bmrCm" class="mt-3 mb-2 ml-2 mr-2 bmrInput inputBorder" placeholder="Centimeters" min="0" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
                       </div>
                       <br><input type="radio" name="gender" class="m-2" id="maleM" value="male">Male
                       <input type="radio" name="gender" class="m-2" id="femaleM" value="female">Female
@@ -272,7 +274,7 @@
               </div>
             </div>
 
-            <div id="bmrHide2" style="display:none" class="col-sm-7 h-75 mt-3">
+            <div id="bmrHide2" style="display:none" class="col-sm-6 h-75 mt-3">
               <div class="alert alert-info" role="alert">
                 <h4 class="alert-heading">Results</h4>
                 <hr>
@@ -281,7 +283,6 @@
               <p class="font-weight-bold">Select Your Activity Level To Receive Your TDEE*</p>
               <div class="mt-3">
                 <select id="selectM">
-                  <option value="0">None</option>
                   <option value="1.2">Sedentary = BMR X 1.2 (little or no exercise, desk job)</option>
                   <option value="1.375">Lightly Active = BMR X 1.375 (light exercise/sports 1-3 days/wk)</option>
                   <option value="1.55">Moderately Active = BMR X 1.55 (moderate exercise/sports 3-5 days/wk)</option>
@@ -309,7 +310,7 @@
                     <div class="col-xs-3 d-flex align-items-start">
                       <label for="weight" class="font-weight-bold h6 ml-1 mt-2">Weight:</label>
                       <input type="number" id="intWeight" class="waterInput mt-1 mr-2" placeholder="Pounds" min="0" required pattern="[0-9]" onkeydown="limitThree(this);" onkeyup="limitThree(this);">
-                      <p class="h6 font-weight-bold mb-0 mt-2 mr-1">Activity Level:</p>
+                      <h6 class="font-weight-bold mb-0 mt-2 mr-1">Activity Level:<h6>
                       <select id="activeW" class="mt-1">
                         <option value="0.55">Less Than an Hour Workout</option>
                         <option value="0.67">One Hour Workout</option>
@@ -318,7 +319,7 @@
                     </div>
                     <div>
                       <button type="button" class="btn btn-secondary mt-1 float-right" id="intCalc">Calculate</button>
-                      <p class="h5 text-center font-weight-bold mt-2 bg-secondary w-75 rounded" id="totalWater"></p>
+                      <h5 class="text-center font-weight-bold mt-2 bg-secondary w-75 rounded" id="totalWater"></h5>
                     </div>
                   </form>
                 </div>
@@ -329,7 +330,7 @@
       </div>
   </section>
 
-  <section class="py-5 bg-image-full" style="background-image: url('images/erol-ahmed-407736-unsplash.jpg');">
+<section class="py-5 bg-image-full" style="background-image: url('images/maria-fernanda-gonzalez-567455-unsplash.jpg');">
     <div style="height: 100px;"></div>
   </section>
   <section class="py-5" id="mealRandom">
@@ -397,27 +398,31 @@
     </div>
   </section>
 
-  <div id="workRandom" class="container">
+<section class="py-5 bg-image-full" style="background-image: url('images/erol-ahmed-407736-unsplash.jpg');">
+  <div style="height: 100px;"></div>
+</section>
+<section class="py-5" id="workRandom">
+  <div class="container">
     <h1> Workout Randomizer </h1>
     <p class="lead">Wanting to spice up your oridinary workout? Give the Workout Randomizer a shot!</p>
-    <button type="button" class="btn btn-secondary btn-lg btn-block mb-4" id="randomEx">Get your Workout</button>
+    <button type="button" class="btn btn-secondary btn-lg btn-block mb-4" id="randomEx">Get Your Workout</button>
   </div>
 
 <div class="container">
 <div class="row" id="workHide" style="display:none">
     <div class="col-sm">
-      <h5>Cardio</h5>
-<div class="card" style="width: 18rem;">
+<h5 class="text-center mr-5">Cardio</h5>
+<div class="card mb-2 mr-5" style="width: 18rem;">
 <img class="card-img-top" src="\images\alexander-redl-185764-unsplash.jpg" alt="Card image cap">
   <div class="card-body">
 <h5 class="card-title bg-dark text-light" id="cardioEx"></h5>
-    <h6 class="card-subtitle mb-2 text-muted">Get yo jiggy on</h6>
+    <h6 class="card-subtitle mb-2 text-muted">Cardio is good for heart health</h6>
   </div>
 </div>
     </div>
     <div class="col-sm">
-      <h5>Upper Body Workout</h5>
-<div class="card" style="width: 18rem;">
+      <h5 class="text-center mr-4">Upper Body Workout</h5>
+<div class="card mb-2 mr-5 ml-4" style="width: 18rem;">
 <img class="card-img-top" src="\images\pexels-photo-416754.jpeg" alt="Card image cap">
   <div class="card-body">
 <h5 class="card-title bg-dark text-light" id="upperMus"></h5>
@@ -427,8 +432,8 @@
 </div>
     </div>
     <div class="col-sm">
-      <h5>Lower Body Workout</h5>
-<div class="card" style="width: 18rem;">
+<h5 class="text-center ml-4">Lower Body Workout</h5>
+<div class="card mb-2 ml-4" style="width: 18rem;">
 <img class="card-img-top" src="\images\scott-webb-22437-unsplash.jpg" alt="Card image cap">
   <div class="card-body">
 <h5 class="card-title bg-dark text-light" id="lowerMus"></h5>
@@ -439,6 +444,7 @@
     </div>
   </div>
 </div>
+</section>
 
   <footer class="py-4" style="background-color: #0c4404;">
     <div class="container">
@@ -447,8 +453,10 @@
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
   <script src="mht.js"></script>
   <script src="vendor/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
