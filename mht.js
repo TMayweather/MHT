@@ -1,13 +1,3 @@
-// Imperial/Metric Toggle
-$(document).ready(function () {
-  $("input[name$='bmr']").change(function () {
-    $('#bmr1').toggle();
-    $('#bmr2').toggle();
-    bmrHideI();
-    bmrHideM();
-  });
-});
-
 //Imperial BMI
 function bmiCalcI() {
   // Get user info
@@ -43,7 +33,7 @@ function bmiHideI() {
   document.getElementById('bmiHide1').style.display = "none";
 }
 
-//Calulate Imperial BMI and show results or errors onclick
+//Calculate Imperial BMI and show results or errors onclick
 $(document).ready(function () {
   var inputWeight = $("input[id='bmiWeight']");
   var inputHeight = $("input[id='bmiHeightft']");
@@ -314,13 +304,6 @@ $(document).ready(function () {
       inputHeight.removeClass('inputError');
     }
   });
-});
-
-$("input[name$='bmr']").change(function () {
-  $('#bmr1').toggle();
-  $('#bmr2').toggle();
-  bmrHideI();
-  bmrHideM();
 });
 
 //Reset Metric BMR 
@@ -719,7 +702,3 @@ $(document).ready(function () {
 
   });
 });
-
-
-//Mifflin-St. Jeor Equation
-//According to Nutrition Therapy and Pathophysiology, the Mifflin-St. Jeor equation was developed in 1990 and has been validated by more than 10 studies. The Mifflin-St. Jeor equation is gaining popularity among the nutrition professionals for accurately estimating caloric needs. The equation is as follows: for females = 10 x (Weight in kg) + 6.25 x (Height in cm) - 5 x age - 161; for males= 10 x (Weight in kg) + 6.25 x (Height in cm) - 5 x age + 5. These equations are also multiplied by the //same physical activity factors to estimate daily caloric needs.
